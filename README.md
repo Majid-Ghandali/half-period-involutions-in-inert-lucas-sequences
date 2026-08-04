@@ -18,7 +18,7 @@ When:
 $$\chi_p(D)=-1, \qquad Q\equiv -1 \pmod p$$
 
 the associated companion matrix:
-$$A=\begin{pmatrix} P & -Q \\ 1 & 0 \end{pmatrix}$$
+A= $\begin{pmatrix} P & -Q \\ 1 & 0 \end{pmatrix}$
 
 satisfies the structural identity:
 $$A^{T/2}=-I$$
@@ -33,13 +33,17 @@ and consequently yields exact cancellation of all odd observables over a full or
 ## Main Theorem
 
 Let $D=P^2-4Q$, and let $p$ be an odd prime satisfying:
+
 $$\chi_p(D)=-1, \qquad Q\equiv -1 \pmod p$$
 
-If $\lambda$ is a root of $x^2-Px+Q$ in $\mathbb{F}_{p^2}$ and $T=\operatorname{ord}(\lambda)$, then:
+If $\lambda$ is a root of $x^2-Px+Q$ in $$\mathbb{F}_{p^2}$$ and T = $\{ord}$ $\lambda$, then:
+
 $$A^{T/2}=-I$$
 
 Consequently:
+
 $$U_{n+T/2}\equiv -U_n \pmod p$$
+
 $$V_{n+T/2}\equiv -V_n \pmod p$$
 
 and every odd observable cancels exactly over a complete orbit.
@@ -72,6 +76,7 @@ The computational artifact mirrors the logical structure of the paper:
 |
 v
 [Step 7: Character Cancellation]
+```
 
 ## Proof Mapping & Structural Pipeline
 
