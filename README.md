@@ -46,7 +46,7 @@ V_1=P,\qquad
 V_{n+2}=P V_{n+1}-Q V_n.
 $$
 
-For an odd prime \(p\) with \(p\nmid Q\), the discriminant is
+For an odd prime $p$ with $p\nmid Q$, the discriminant is
 
 $$
 D=P^2-4Q.
@@ -81,7 +81,7 @@ The manuscript studies two exact structural mechanisms:
 | Item | Value |
 |:--|:--|
 | Mathematics | Lucas recurrences modulo inert primes |
-| Main objects | \(U_n(P,Q)\), \(V_n(P,Q)\), companion matrix \(A\) |
+| Main objects | $U_n(P,Q)$, $V_n(P,Q)$, companion matrix $A$ |
 | Structural mechanisms | Half-period translation; rank-block scalar propagation |
 | Computational role | Diagnostic exact-arithmetic verification |
 | Manuscript source | `manuscript/` |
@@ -143,7 +143,7 @@ P & -Q \\
 \end{pmatrix}
 $$
 
-be the companion matrix modulo $$p$$, and let
+be the companion matrix modulo $p$, and let
 
 
 $$T=\mathrm{ord}_{\mathrm{GL}_2(\mathbb{F}_p)}(A)$$
@@ -164,7 +164,7 @@ T\text{ is even}
 m\equiv \frac{T}{2}\pmod T.
 $$
 
-Consequently, when \(T\) is even,
+Consequently, when $T$ is even,
 
 $$
 A^{T/2}\equiv -I\pmod p,
@@ -202,7 +202,7 @@ $$
 
 ### 1. Half-Period Translation
 
-If the matrix period \(T\) is even,
+If the matrix period $T$ is even,
 
 $$
 U_{n+T/2}\equiv-U_n\pmod p,
@@ -210,9 +210,9 @@ U_{n+T/2}\equiv-U_n\pmod p,
 V_{n+T/2}\equiv-V_n\pmod p.
 $$
 
-Hence every odd function on \(\mathbb F_p\) cancels under pairing over a complete matrix period.
+Hence every odd function on $\mathbb F_p\$ cancels under pairing over a complete matrix period.
 
-For the quadratic character \(\chi_p\), the relevant condition is
+For the quadratic character $\chi_p\$, the relevant condition is
 
 $$
 \chi_p(-1)=-1,
@@ -260,7 +260,7 @@ Let
 T = \alpha\omega.
 ```
 
-For a multiplicative character $$\psi\$$, extended by $$\psi(0)=0\$$,
+For a multiplicative character $\psi\$, extended by $\psi(0)=0\$,
 
 ```math
 \sum_{n=1}^{T} \psi(U_n)
@@ -273,7 +273,7 @@ For a multiplicative character $$\psi\$$, extended by $$\psi(0)=0\$$,
 \right).
 ```
 
-and similarly for \(V_n\).
+and similarly for $V_n$.
 
 Thus,
 
@@ -294,8 +294,8 @@ The repository includes exact-arithmetic verification of diagnostic examples fro
 
 | Example | Parameters | Structural role |
 |:--|:--|:--|
-| Fibonacci modulo $$7$$ | $$(P=1,\ Q=-1,\ p=7\)$$ | Half-period quadratic cancellation |
-| Scalar example modulo $$5$$ | $$(P=1,\ Q=2,\ p=5\)$$ | Rank-block scalar cancellation with $$\chi_p(-1)=1\$$ |
+| Fibonacci modulo $7$ | $(P=1,\ Q=-1,\ p=7\)$ | Half-period quadratic cancellation |
+| Scalar example modulo $5$ | $(P=1,\ Q=2,\ p=5\)$ | Rank-block scalar cancellation with $\chi_p(-1)=1\$ |
 
 For
 
@@ -327,7 +327,7 @@ The repository verifier checks the corresponding finite identities using exact m
 
 ## Mathematical Scope
 
-The manuscript works with general Lucas parameters \((P,Q)\) under the inert hypothesis
+The manuscript works with general Lucas parameters $P,Q$ under the inert hypothesis
 
 $$
 p\text{ odd},
