@@ -1,23 +1,24 @@
-```json
 {
-  "title": "Computational Companion Artifact for \"Half-Period Involutions in Inert Lucas Sequences\"",
-  "description": "Official SageMath computational companion script and data replication package for the manuscript 'Half-Period Involutions in Inert Lucas Sequences'. It provides an explicit 7-step structural verification engine tracking the norm-fibre mechanics, unique cyclic group involutions, and matrix-level dynamics for both primary and companion Lucas sequences.",
+  "title": "Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences",
+  "description": "Preprint and reproducibility materials for a focused structural note on inert Lucas recurrences, half-period involutions, rank-block scalar propagation, and exact cancellation mechanisms.",
+  "upload_type": "software",
+  "publication_date": "2026-08-19",
   "creators": [
     {
       "name": "Ghandali, Majid",
-      "affiliation": "Independent Researcher",
+      "affiliation": "Independent Researcher, Tehran, Iran",
       "orcid": "0009-0001-1097-1770"
     }
   ],
-  "access_right": "open",
-  "license": "MIT",
-  "upload_type": "software",
   "keywords": [
     "Lucas sequences",
-    "Finite fields",
-    "SageMath",
-    "Matrix involutions",
-    "Character sums",
-    "Number theory"
-  ]
+    "inert primes",
+    "matrix period",
+    "rank of apparition",
+    "rank multiplier",
+    "character sums",
+    "quadratic character"
+  ],
+  "license": "MIT",
+  "version": "1.0.0-preprint"
 }
