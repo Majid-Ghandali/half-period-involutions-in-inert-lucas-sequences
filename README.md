@@ -1,131 +1,603 @@
-# Half-Period Involutions in Inert Lucas Sequences
+# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Companion repository for the paper **"Half-Period Involutions in Inert Lucas Sequences"** by Majid Ghandali.
+> Reproducibility and archival materials for **“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”**
 
----
+This repository accompanies a focused structural note on Lucas recurrences modulo inert primes. The manuscript studies the half-period scalar involution of the companion matrix and organizes two exact mechanisms that can force cancellation of full-period character sums.
 
-## Abstract
+**Majid Ghandali** · Independent Researcher · Tehran, Iran · 2026  
+[ORCID: 0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
 
-This repository accompanies the paper *Half-Period Involutions in Inert Lucas Sequences* and provides a fully reproducible computational verification of the main theorem.
-
-For an odd prime $p$, consider a Lucas sequence $U_n(P,Q)$ with discriminant:
-$$D=P^2-4Q$$
-
-When:
-$$\chi_p(D)=-1, \qquad Q\equiv -1 \pmod p$$
-
-the associated companion matrix:
-A= $\begin{pmatrix} P & -Q \\ 1 & 0 \end{pmatrix}$
-
-satisfies the structural identity:
-$$A^{T/2}=-I$$
-
-where $T$ denotes the spectral period of the inert eigenvalue. This involution induces exact half-period sign reversal:
-$$U_{n+T/2}\equiv -U_n \pmod p$$
-
-and consequently yields exact cancellation of all odd observables over a full orbit. The repository contains verification scripts, numerical examples, exported datasets, and reproducible computational artifacts corresponding to every step of the proof pipeline.
+**Release status:** pending first tagged archival release.  
+**Repository DOI:** pending Zenodo archival release.
 
 ---
 
-## Main Theorem
+## Important Scope Statement
 
-Let $D=P^2-4Q$, and let $p$ be an odd prime satisfying:
+The accompanying manuscript contains the mathematical statements, hypotheses, proofs, and literature positioning.
 
-$$\chi_p(D)=-1, \qquad Q\equiv -1 \pmod p$$
+This repository provides the manuscript source, compiled preprint, diagnostic computational checks, and release/provenance materials associated with the manuscript.
 
-If $\lambda$ is a root of $x^2-Px+Q$ in $$\mathbb{F}_{p^2}$$ and T = $\{ord}$ $\lambda$, then:
+> [!IMPORTANT]
+> The mathematical proofs are contained in the accompanying manuscript. The computations in this repository verify selected diagnostic examples and implementation details; they do **not** replace the proofs.
 
-$$A^{T/2}=-I$$
-
-Consequently:
-
-$$U_{n+T/2}\equiv -U_n \pmod p$$
-
-$$V_{n+T/2}\equiv -V_n \pmod p$$
-
-and every odd observable cancels exactly over a complete orbit.
+> [!IMPORTANT]
+> The classical rank--period--multiplier framework used by the manuscript is explicitly attributed to the existing literature. This repository does not claim a new general theory or classification of Lucas ranks, periods, or multipliers.
 
 ---
 
-## Proof Pipeline
+## Why This Repository?
 
-The computational artifact mirrors the logical structure of the paper:
+The accompanying manuscript considers the Lucas sequence
+
+$$
+U_0=0,\qquad
+U_1=1,\qquad
+U_{n+2}=P U_{n+1}-Q U_n,
+$$
+
+and its companion sequence
+
+$$
+V_0=2,\qquad
+V_1=P,\qquad
+V_{n+2}=P V_{n+1}-Q V_n.
+$$
+
+For an odd prime $p$ with $p\nmid Q$, the discriminant is
+
+$$
+D=P^2-4Q.
+$$
+
+The inert setting is
+
+$$
+\chi_p(D)=-1.
+$$
+
+The companion matrix is
+
+$$
+A=
+\begin{pmatrix}
+P & -Q \\
+1 & 0
+\end{pmatrix}
+\in\mathrm{GL}_2(\mathbb F_p).
+$$
+
+The manuscript studies two exact structural mechanisms:
+
+1. **half-period translation** arising from a scalar matrix involution;
+2. **scalar propagation across rank blocks**.
+
+---
+
+## Repository at a Glance
+
+| Item | Value |
+|:--|:--|
+| Mathematics | Lucas recurrences modulo inert primes |
+| Main objects | $U_n(P,Q)$, $V_n(P,Q)$, companion matrix $A$ |
+| Structural mechanisms | Half-period translation; rank-block scalar propagation |
+| Computational role | Diagnostic exact-arithmetic verification |
+| Manuscript source | `manuscript/` |
+| Verification code | `code/` |
+| Verification outputs | `results/` |
+| Release metadata | `metadata/` |
+| License | MIT |
+| Archival DOI | Pending first Zenodo release |
+
+---
+
+## Quick Navigation
+
+| Action | Link |
+|:--|:--|
+| Main structural setting | [Main Structural Setting](#main-structural-setting) |
+| Cancellation mechanisms | [Two Exact Cancellation Mechanisms](#two-exact-cancellation-mechanisms) |
+| Diagnostic examples | [Diagnostic Examples](#diagnostic-examples) |
+| Mathematical scope | [Mathematical Scope](#mathematical-scope) |
+| Verification pipeline | [Verification Pipeline](#verification-pipeline) |
+| Build the preprint | [Build the Preprint](#build-the-preprint) |
+| Repository structure | [Repository Structure](#repository-structure) |
+| Provenance and integrity | [Provenance and Integrity](#provenance-and-integrity) |
+| Citation | [Citation](#citation) |
+| Zenodo release | [Zenodo Archival Release](#zenodo-archival-release) |
+
+---
+
+## Contents
+
+- [Main Structural Setting](#main-structural-setting)
+- [Two Exact Cancellation Mechanisms](#two-exact-cancellation-mechanisms)
+- [Diagnostic Examples](#diagnostic-examples)
+- [Mathematical Scope](#mathematical-scope)
+- [Theoretical Framework](#theoretical-framework)
+- [Verification Pipeline](#verification-pipeline)
+- [Reproducibility Principles](#reproducibility-principles)
+- [Usage](#usage)
+- [Build the Preprint](#build-the-preprint)
+- [Repository Structure](#repository-structure)
+- [Provenance and Integrity](#provenance-and-integrity)
+- [Citation](#citation)
+- [Zenodo Archival Release](#zenodo-archival-release)
+- [Release Discipline](#release-discipline)
+- [License](#license)
+- [Author](#author)
+
+---
+
+## Main Structural Setting
+
+Let
+
+$$
+A =
+\begin{pmatrix}
+P & -Q \\
+1 & 0
+\end{pmatrix}
+$$
+
+be the companion matrix modulo $p$, and let
+
+
+$$T=\mathrm{ord}_{\mathrm{GL}_2(\mathbb{F}_p)}(A)$$
+
+denote its matrix period.
+
+In the inert setting, the manuscript records the exact half-period criterion
+
+$$
+A^m\equiv -I\pmod p
+$$
+
+if and only if
+
+$$
+T\text{ is even}
+\qquad\text{and}\qquad
+m\equiv \frac{T}{2}\pmod T.
+$$
+
+Consequently, when $T$ is even,
+
+$$
+A^{T/2}\equiv -I\pmod p,
+$$
+
+and therefore
+
+$$
+U_{n+T/2}\equiv -U_n\pmod p,
+\qquad
+V_{n+T/2}\equiv -V_n\pmod p.
+$$
+
+This yields exact cancellation for functions satisfying
+
+$$
+f(-x)=-f(x).
+$$
+
+For the quadratic character, this mechanism applies in particular when
+
+$$
+\chi_p(-1)=-1,
+$$
+
+equivalently when
+
+$$
+p\equiv3\pmod4.
+$$
+
+---
+
+## Two Exact Cancellation Mechanisms
+
+### 1. Half-Period Translation
+
+If the matrix period $T$ is even,
+
+$$
+U_{n+T/2}\equiv-U_n\pmod p,
+\qquad
+V_{n+T/2}\equiv-V_n\pmod p.
+$$
+
+Hence every odd function on $\mathbb F_p\$ cancels under pairing over a complete matrix period.
+
+For the quadratic character $\chi_p\$, the relevant condition is
+
+$$
+\chi_p(-1)=-1,
+$$
+
+equivalently,
+
+$$
+p\equiv3\pmod4.
+$$
+
+### 2. Rank-Block Scalar Propagation
+
+Let
+
+```math
+\alpha = \min \{ n \ge 1 : U_n \equiv 0 \pmod p \}.
+```
+
+be the rank of apparition, and define the rank multiplier
+
+```math
+\Lambda := U_{\alpha+1} \pmod p.
+```
+
+The classical rank--period--multiplier framework gives
+
+```math
+A^\alpha \equiv \Lambda I \pmod p.
+```
+
+Consequently,
+
+```math
+U_{r+t\alpha} \equiv \Lambda^t U_r \pmod p,
+\qquad
+V_{r+t\alpha} \equiv \Lambda^t V_r \pmod p.
+```
+
+Let
+
+```math
+\omega = \mathrm{ord}_{\mathbb{F}_p^\times}(\Lambda),
+\qquad
+T = \alpha\omega.
+```
+
+For a multiplicative character $\psi\$, extended by $\psi(0)=0\$,
+
+```math
+\sum_{n=1}^{T} \psi(U_n)
+=
+\left(
+\sum_{t=0}^{\omega-1} \psi(\Lambda)^t
+\right)
+\left(
+\sum_{r=1}^{\alpha} \psi(U_r)
+\right).
+```
+
+and similarly for $V_n$.
+
+Thus,
+
+```math
+\psi(\Lambda) \ne 1
+```
+
+forces exact full-period cancellation.
+
+> [!NOTE]
+> The rank--period--multiplier framework and the underlying classical Lucas identities are explicitly attributed in the accompanying manuscript. This repository does not present them as newly discovered theory.
+
+---
+
+## Diagnostic Examples
+
+The repository includes exact-arithmetic verification of diagnostic examples from the manuscript.
+
+| Example | Parameters | Structural role |
+|:--|:--|:--|
+| Fibonacci modulo $7$ | $(P=1,\ Q=-1,\ p=7\)$ | Half-period quadratic cancellation |
+| Scalar example modulo $5$ | $(P=1,\ Q=2,\ p=5\)$ | Rank-block scalar cancellation with $\chi_p(-1)=1\$ |
+
+For
+
+$$
+(P,Q,p)=(1,2,5),
+$$
+
+one has
+
+$$
+\alpha=6,
+\qquad
+\Lambda=U_7\equiv2\pmod5,
+$$
+
+and therefore
+
+$$
+\chi_5(\Lambda)=-1,
+\qquad
+\chi_5(-1)=1.
+$$
+
+Thus the full-period quadratic-character cancellation in this example is not explained by half-period odd-function pairing; it arises from scalar propagation between successive rank blocks.
+
+The repository verifier checks the corresponding finite identities using exact modular arithmetic.
+
+---
+
+## Mathematical Scope
+
+The manuscript works with general Lucas parameters $P,Q$ under the inert hypothesis
+
+$$
+p\text{ odd},
+\qquad
+p\nmid Q,
+\qquad
+\chi_p(P^2-4Q)=-1.
+$$
+
+The repository does **not** claim:
+
+- a new general theory of Lucas ranks, periods, or multipliers;
+- a new classification of rank multipliers;
+- a density theorem;
+- a Chebotarev theorem;
+- an Artin-type distribution theorem;
+- a solution of unresolved parity or density problems.
+
+The manuscript remains the authoritative source for the exact mathematical scope, theorem statements, proofs, and literature positioning.
+
+---
+
+## Theoretical Framework
+
+The structural framework can be summarized as follows:
+
+```mermaid
+graph TD
+    A["Inert Lucas recurrence"] --> B["Companion matrix over F_p"]
+    B --> C["Matrix period T"]
+
+    C --> D["Half-period involution"]
+    C --> E["Rank multiplier"]
+
+    D --> F["Anti-periodicity"]
+    E --> G["Rank-block propagation"]
+
+    F --> H["Odd-function cancellation"]
+    G --> I["Character cancellation"]
+
+    H --> J["Exact full-period cancellation"]
+    I --> J
+```
+
+The supporting literature includes classical Lucas work and modern treatments of period, rank, entry-point, and order phenomena, together with the cited literature on character sums for recurrence sequences.
+
+For complete hypotheses, proofs, and bibliographic context, consult the accompanying manuscript.
+
+---
+
+## Verification Pipeline
+
+The repository verification is intentionally subordinate to the mathematics of the manuscript.
+
+```mermaid
+graph LR
+    A["Parameters (P,Q,p)"] --> B["Inertness check"]
+    B --> C["Companion matrix A"]
+    C --> D["Matrix-period computation"]
+    D --> E["Half-period diagnostic"]
+
+    A --> F["Rank of apparition alpha"]
+    F --> G["Rank multiplier Lambda"]
+    G --> H["Rank-block propagation"]
+    H --> I["Character-sum diagnostic"]
+
+    E --> J["Example validation"]
+    I --> J
+    J --> K["Exact-arithmetic verification record"]
+```
+
+The verification pipeline checks the explicitly stated diagnostic examples and structural identities selected for reproducibility.
+
+It does not replace the mathematical proofs or establish new mathematical results.
+
+---
+
+## Reproducibility Principles
+
+1. **Exact arithmetic**  
+   Mathematical checks use exact modular arithmetic.
+
+2. **Proof/computation separation**  
+   The manuscript contains the proofs; the repository checks selected finite instances.
+
+3. **Traceable provenance**  
+   Release artifacts are associated with manifests and SHA-256 hashes.
+
+4. **No hidden research state**  
+   Private research paths, credentials, temporary files, failed exploratory scripts, and internal governance records are not included in the public repository.
+
+5. **Versioned archival release**  
+   Public releases identify immutable tagged source snapshots.
+
+---
+
+## Usage
+
+The repository verifier has no third-party Python dependency.
+
+From the repository root, run:
+
+```bash
+python code/verify_examples.py
+```
+
+A successful run creates:
 
 ```text
-[Inertness]
-    ↓
-[Norm identity: λ^(p+1) = -1]
-    ↓
-[-1 ∈ <λ>]
-    ↓
-[Unique involution]
-    ↓
-[λ^(T/2) = -1]
-    ↓
-[A^(T/2) = -I]
-    ↓
-[Anti-periodicity]
-    ↓
-[Exact cancellation]
-[Step 1: Inertness] ---> [Step 2: F_{p^2} Realization] ---> [Step 3: Norm-Fibre Identity]
-|
-[Step 6: Anti-Periodicity] <--- [Step 5: Matrix Bridge] <--- [Step 4: Unique Involution]
-|
-v
-[Step 7: Character Cancellation]
+results/example_verification.json
 ```
 
-## Proof Mapping & Structural Pipeline
+The program uses exact modular arithmetic and checks the diagnostic examples described above.
 
-The verification engine maps directly to the paper's theoretical framework via the following layers:
-* **Step 1:** Strict canonical validation of the quadratic non-residuosity ($\chi_p(D) = -1$) and specialization to $Q \equiv -1 \pmod{p}$.
-* **Step 2:** Explicit degree-2 finite field extension $\mathbb{F}_{p^2} = \mathbb{F}_p[x] / (x^2 - Px + Q)$ using irreducible characteristic polynomials.
-* **Step 3:** Structural derivation of the norm-fibre condition ($\lambda^{p+1} = -1$).
-* **Step 4:** Representation of the unique order-2 involution ($\lambda^{T/2} = -1$) in the cyclic subgroup $\langle\lambda\rangle$.
-* **Step 5:** Matrix representation projection confirming the central matrix involution $A^{T/2} = -I$.
-* **Step 6:** Dynamical state-space vector and sequence projection orbit anti-periodicity ($U_{n+T/2} \equiv -U_n$ and $V_{n+T/2} \equiv -V_n$).
-* **Step 7:** Exact character-sum cancellation over a full orbit period whenever $\chi_p(-1) = -1$.
+---
 
-## Prerequisites & Installation
+## Build the Preprint
 
-To run this computational proof structure, you need to have **SageMath** (v9.0 or later) installed on your system.
+The manuscript source is located in:
+
+```text
+manuscript/
+```
+
+For a conventional local build:
 
 ```bash
-# Clone the repository
-git clone [https://github.com/Majid-Ghandali/lucas-half-period-involutions.git](https://github.com/Majid-Ghandali/lucas-half-period-involutions.git)
-cd lucas-half-period-involutions
+cd manuscript
+
+pdflatex Main_P4_Preprint.tex
+bibtex Main_P4_Preprint
+pdflatex Main_P4_Preprint.tex
+pdflatex Main_P4_Preprint.tex
 ```
-## Usage
-​Execute the main verification pipeline directly via SageMath:
 
-```bash
-sage verify_theorem_pipeline.sage
+The compiled preprint PDF is included in the release package.
+
+> [!NOTE]
+> The repository release contains a preprint/reproducibility version. Journal-facing formatting is maintained separately in the submission workflow and should not be inferred from the repository preprint.
+
+---
+
+## Repository Structure
+
+```text
+half-period-involutions-in-inert-lucas-sequences/
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── zenodo.json
+├── manuscript/
+│   ├── Main_P4_Preprint.tex
+│   ├── references_P4_Preprint.bib
+│   ├── Main_P4_Preprint.bbl
+│   └── Main_P4_Preprint.pdf
+├── code/
+│   └── verify_examples.py
+├── results/
+│   └── example_verification.json
+└── metadata/
+    ├── RELEASE_MANIFEST.json
+    └── SHA256SUMS.txt
 ```
-## Outputs
-​The execution automatically benchmarks representative sequences (Fibonacci, Pell, etc.) and performs a systematic scan over doubly-inert Fibonacci primes up to p \le 200, exporting full verifiable matrices to:
-​Theorem_pipeline_verification.csv (For tabular integration)
-​Theorem_pipeline_verification.json (For exact reproducibility payload).
 
-## Citation 
+> [!NOTE]
+> The exact directory contents at the archival release are authoritative. The tree above is the intended public-release structure and must be reconciled with the actual branch contents before tagging.
 
-If you utilize this artifact or the theoretical results in your academic work, please cite the main manuscript and this software package:
-@article{ghandali2026half,
-  author  = {Ghandali, Majid},
-  title   = {Half-Period Involutions in Inert Lucas Sequences},
-  journal = {Journal of Number Theory (Preprint)},
-  year    = {2026}
-}
+---
 
-@software{ghandali_artifact_2026,
-  author       = {Ghandali, Majid},
-  title        = {Computational Companion for "Half-Period Involutions in Inert Lucas Sequences"},
-  month        = jun,
-  year         = 2026,
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {[https://doi.org/10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)}
-}
+## Provenance and Integrity
 
+Each archival release records:
+
+```text
+Git commit
+Git tag
+release manifest
+SHA256SUMS
+```
+
+The release manifest identifies the exact manuscript and reproducibility artifacts associated with that version.
+
+Before the first tagged archival release:
+
+```text
+Repository DOI: pending
+```
+
+After archival:
+
+```text
+Repository DOI: assigned by Zenodo
+```
+
+The DOI must identify the specific archived release and must never be replaced by an invented, temporary, or unverified DOI.
+
+---
+
+## Citation
+
+### Cite the manuscript
+
+Use the manuscript citation supplied in the archived release metadata.
+
+### Cite the repository
+
+After the first archival release, cite the repository through its `CITATION.cff` metadata and the DOI assigned by Zenodo.
+
+> [!IMPORTANT]
+> The DOI should not be entered into this README until Zenodo has actually minted and verified the archival DOI.
+
+---
+
+## Zenodo Archival Release
+
+The intended first archival tag is:
+
+```text
+v1.0.0-preprint
+```
+
+The archival sequence is:
+
+```text
+GitHub release
+      |
+      v
+Zenodo archival ingestion
+      |
+      v
+Version-specific DOI
+```
+
+Before the first archival release:
+
+```text
+Zenodo DOI: pending
+```
+
+After the DOI is minted, the release metadata, `CITATION.cff`, `zenodo.json`, and README should be updated consistently in a subsequent controlled metadata release.
+
+---
+
+## Release Discipline
+
+The public repository is a publication and reproducibility artifact.
+
+Do not commit:
+
+- private research paths;
+- credentials, tokens, or secrets;
+- failed exploratory artifacts;
+- internal governance records;
+- unverified DOI placeholders;
+- manuscript claims that are not supported by the accompanying paper.
+
+Release tags identify immutable public versions.
+
+---
+
+## License
+
+All contents of this repository are released under the [MIT License](LICENSE).
+
+---
+
+## Author
+
+**Majid Ghandali**  
+Independent Researcher, Tehran, Iran
+
+Email: [majid.ghandali@gmail.com](mailto:majid.ghandali@gmail.com)  
+ORCID: [0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
