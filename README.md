@@ -457,10 +457,10 @@ For a conventional local build:
 ```bash
 cd manuscript
 
-pdflatex Main_P4_Preprint.tex
-bibtex Main_P4_Preprint
-pdflatex Main_P4_Preprint.tex
-pdflatex Main_P4_Preprint.tex
+pdflatex Main_P4_FQ_Preparation.tex
+bibtex Main_P4_FQ_Preparation
+pdflatex Main_P4_FQ_Preparation.tex
+pdflatex Main_P4_FQ_Preparation.tex
 ```
 
 The compiled preprint PDF is included in the release package.
@@ -477,12 +477,11 @@ half-period-involutions-in-inert-lucas-sequences/
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
-├── zenodo.json
+├── .zenodo.json
 ├── manuscript/
-│   ├── Main_P4_Preprint.tex
+│   ├── Main_P4_FQ_Preparation.tex
 │   ├── references_P4_Preprint.bib
-│   ├── Main_P4_Preprint.bbl
-│   └── Main_P4_Preprint.pdf
+│   └── Main_P4_FQ_Preparation.pdf
 ├── code/
 │   └── verify_examples.py
 ├── results/
@@ -567,7 +566,7 @@ Before the first archival release:
 Zenodo DOI: pending
 ```
 
-After the DOI is minted, the release metadata, `CITATION.cff`, `zenodo.json`, and README should be updated consistently in a subsequent controlled metadata release.
+After the DOI is minted, the release metadata, `CITATION.cff`, `.zenodo.json`, and README should be updated consistently in a subsequent controlled metadata release.
 
 ---
 
@@ -601,3 +600,4 @@ Independent Researcher, Tehran, Iran
 
 Email: [majid.ghandali@gmail.com](mailto:majid.ghandali@gmail.com)  
 ORCID: [0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
+
