@@ -18,7 +18,8 @@ This repository accompanies a focused structural note on Lucas recurrences modul
 
 The accompanying manuscript contains the mathematical statements, hypotheses, proofs, and literature positioning.
 
-This repository provides the manuscript source, compiled preprint, diagnostic computational checks, and release/provenance materials associated with the manuscript.
+This repository provides the manuscript source, compiled preprint, diagnostic computational checks and archival metadata associated with
+the manuscript.
 
 > [!IMPORTANT]
 > The mathematical proofs are contained in the accompanying manuscript. The computations in this repository verify selected diagnostic examples and implementation details; they do **not** replace the proofs.
@@ -494,7 +495,8 @@ half-period-involutions-in-inert-lucas-sequences/
 ```
 
 > [!NOTE]
-> The exact directory contents at the archival release are authoritative. The tree above is the intended public-release structure and must be reconciled with the actual branch contents before tagging.
+> The directory tree above defines the intended public release structure.
+> Before tagging, the actual branch contents must match this tree exactly.
 
 ---
 
