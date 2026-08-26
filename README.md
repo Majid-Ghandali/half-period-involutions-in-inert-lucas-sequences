@@ -104,7 +104,6 @@ The manuscript studies two exact structural mechanisms:
 | Verification pipeline | [Verification Pipeline](#verification-pipeline) |
 | Build the preprint | [Build the Preprint](#build-the-preprint) |
 | Repository structure | [Repository Structure](#repository-structure) |
-| Provenance and integrity | [Provenance and Integrity](#provenance-and-integrity) |
 | Citation | [Citation](#citation) |
 | Zenodo release | [Zenodo Archival Release](#zenodo-archival-release) |
 
@@ -122,7 +121,6 @@ The manuscript studies two exact structural mechanisms:
 - [Usage](#usage)
 - [Build the Preprint](#build-the-preprint)
 - [Repository Structure](#repository-structure)
-- [Provenance and Integrity](#provenance-and-integrity)
 - [Citation](#citation)
 - [Zenodo Archival Release](#zenodo-archival-release)
 - [Release Discipline](#release-discipline)
@@ -428,16 +426,19 @@ It does not replace the mathematical proofs or establish new mathematical result
 
 The repository verifier has no third-party Python dependency.
 
-From the repository root, run:
+From the /code in repository run:
 
 ```bash
-python code/verify_examples.py
+python Verify-theorem-pipeline.py
+python code/verify-examples.py
 ```
 
 A successful run creates:
 
 ```text
-results/example_verification.json
+results /theorem-pipeline-verification.csv
+results/theorem-pipeline-verification.json
+results/example-verification.json
 ```
 
 The program uses exact modular arithmetic and checks the diagnostic examples described above.
@@ -457,10 +458,10 @@ For a conventional local build:
 ```bash
 cd manuscript
 
-pdflatex Main_P4_Preprint.tex
-bibtex Main_P4_Preprint
-pdflatex Main_P4_Preprint.tex
-pdflatex Main_P4_Preprint.tex
+pdflatex main-p4.tex
+bibtex main-p4
+pdflatex main-p4tex
+pdflatex main-p4.tex
 ```
 
 The compiled preprint PDF is included in the release package.
@@ -474,23 +475,26 @@ The compiled preprint PDF is included in the release package.
 
 ```text
 half-period-involutions-in-inert-lucas-sequences/
-├── README.md
-├── LICENSE
+│
+├── .gitignore
+├── .zenodo.json
 ├── CITATION.cff
-├── zenodo.json
+├── LICENSE
+├── README.md
+│
 ├── manuscript/
-│   ├── Main_P4_Preprint.tex
-│   ├── references_P4_Preprint.bib
-│   ├── Main_P4_Preprint.bbl
-│   └── Main_P4_Preprint.pdf
+│   ├── main-p4.tex
+│   ├── main-p4.pdf
+│   └── references.bib
+│
 ├── code/
-│   └── verify_examples.py
-├── results/
-│   └── example_verification.json
-└── metadata/
-    ├── RELEASE_MANIFEST.json
-    └── SHA256SUMS.txt
-```
+│   ├── verify-examples.py
+│   └── verify-theorem-pipeline.py
+│
+└── results/
+    ├── example-verification.json
+    ├── theorem-pipeline-verification.csv
+    └── theorem-pipeline-verification.json```
 
 > [!NOTE]
 > The exact directory contents at the archival release are authoritative. The tree above is the intended public-release structure and must be reconciled with the actual branch contents before tagging.
