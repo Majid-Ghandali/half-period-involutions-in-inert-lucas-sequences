@@ -1,4 +1,4 @@
-# LaTeX and BibTeX build intermediates
+# LaTeX / BibTeX build intermediates
 *.aux
 *.bbl
 *.blg
@@ -10,3 +10,13 @@
 *.fdb_latexmk
 *.synctex.gz
 texput.log
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Local / non-public
+evidence-archive/
+_local_evidence/
+*.sage
+README.md.working-backup

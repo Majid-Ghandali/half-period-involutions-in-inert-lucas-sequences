@@ -18,7 +18,8 @@ This repository accompanies a focused structural note on Lucas recurrences modul
 
 The accompanying manuscript contains the mathematical statements, hypotheses, proofs, and literature positioning.
 
-This repository provides the manuscript source, compiled preprint, diagnostic computational checks, and release/provenance materials associated with the manuscript.
+This repository provides the manuscript source, compiled preprint, diagnostic computational checks and archival metadata associated with
+the manuscript.
 
 > [!IMPORTANT]
 > The mathematical proofs are contained in the accompanying manuscript. The computations in this repository verify selected diagnostic examples and implementation details; they do **not** replace the proofs.
@@ -66,7 +67,7 @@ A=
 P & -Q \\
 1 & 0
 \end{pmatrix}
-\in\mathrm{GL}_2(\mathbb F_p).
+\in\mathrm{GL}_2(\mathbb{F}_p).
 $$
 
 The manuscript studies two exact structural mechanisms:
@@ -79,7 +80,7 @@ The manuscript studies two exact structural mechanisms:
 ## Repository at a Glance
 
 | Item | Value |
-|:--|:--|
+| :-- | :-- |
 | Mathematics | Lucas recurrences modulo inert primes |
 | Main objects | $U_n(P,Q)$, $V_n(P,Q)$, companion matrix $A$ |
 | Structural mechanisms | Half-period translation; rank-block scalar propagation |
@@ -87,7 +88,7 @@ The manuscript studies two exact structural mechanisms:
 | Manuscript source | `manuscript/` |
 | Verification code | `code/` |
 | Verification outputs | `results/` |
-| Release metadata | `metadata/` |
+| Release metadata | `CITATION.cff`; `.zenodo.json` |
 | License | MIT |
 | Archival DOI | Pending first Zenodo release |
 
@@ -96,7 +97,7 @@ The manuscript studies two exact structural mechanisms:
 ## Quick Navigation
 
 | Action | Link |
-|:--|:--|
+| :-- | :-- |
 | Main structural setting | [Main Structural Setting](#main-structural-setting) |
 | Cancellation mechanisms | [Two Exact Cancellation Mechanisms](#two-exact-cancellation-mechanisms) |
 | Diagnostic examples | [Diagnostic Examples](#diagnostic-examples) |
@@ -104,7 +105,7 @@ The manuscript studies two exact structural mechanisms:
 | Verification pipeline | [Verification Pipeline](#verification-pipeline) |
 | Build the preprint | [Build the Preprint](#build-the-preprint) |
 | Repository structure | [Repository Structure](#repository-structure) |
-| Provenance and integrity | [Provenance and Integrity](#provenance-and-integrity) |
+| Provenance and archival release | [Provenance and Archival Release](#provenance-and-archival-release) |
 | Citation | [Citation](#citation) |
 | Zenodo release | [Zenodo Archival Release](#zenodo-archival-release) |
 
@@ -122,7 +123,7 @@ The manuscript studies two exact structural mechanisms:
 - [Usage](#usage)
 - [Build the Preprint](#build-the-preprint)
 - [Repository Structure](#repository-structure)
-- [Provenance and Integrity](#provenance-and-integrity)
+- [Provenance and Archival Release](#provenance-and-archival-release)
 - [Citation](#citation)
 - [Zenodo Archival Release](#zenodo-archival-release)
 - [Release Discipline](#release-discipline)
@@ -145,8 +146,9 @@ $$
 
 be the companion matrix modulo $p$, and let
 
-
-$$T=\mathrm{ord}_{\mathrm{GL}_2(\mathbb{F}_p)}(A)$$
+$$
+T=\mathrm{ord}_{\mathrm{GL}_2(\mathbb{F}_p)}(A)
+$$
 
 denote its matrix period.
 
@@ -193,7 +195,7 @@ $$
 equivalently when
 
 $$
-p\equiv3\pmod4.
+p\equiv 3\pmod 4.
 $$
 
 ---
@@ -205,14 +207,14 @@ $$
 If the matrix period $T$ is even,
 
 $$
-U_{n+T/2}\equiv-U_n\pmod p,
+U_{n+T/2}\equiv -U_n\pmod p,
 \qquad
-V_{n+T/2}\equiv-V_n\pmod p.
+V_{n+T/2}\equiv -V_n\pmod p.
 $$
 
-Hence every odd function on $\mathbb F_p\$ cancels under pairing over a complete matrix period.
+Hence every odd function on $\mathbb{F}_p$ cancels under pairing over a complete matrix period.
 
-For the quadratic character $\chi_p\$, the relevant condition is
+For the quadratic character $\chi_p$, the relevant condition is
 
 $$
 \chi_p(-1)=-1,
@@ -221,65 +223,58 @@ $$
 equivalently,
 
 $$
-p\equiv3\pmod4.
+p\equiv 3\pmod 4.
 $$
 
 ### 2. Rank-Block Scalar Propagation
 
 Let
 
-```math
-\alpha = \min \{ n \ge 1 : U_n \equiv 0 \pmod p \}.
-```
+$$
+\alpha = \min\{ n \ge 1 : U_n \equiv 0 \pmod p \}
+$$
 
 be the rank of apparition, and define the rank multiplier
 
-```math
+$$
 \Lambda := U_{\alpha+1} \pmod p.
-```
+$$
 
 The classical rank--period--multiplier framework gives
 
-```math
+$$
 A^\alpha \equiv \Lambda I \pmod p.
-```
+$$
 
 Consequently,
 
-```math
+$$
 U_{r+t\alpha} \equiv \Lambda^t U_r \pmod p,
 \qquad
 V_{r+t\alpha} \equiv \Lambda^t V_r \pmod p.
-```
+$$
 
 Let
 
-```math
+$$
 \omega = \mathrm{ord}_{\mathbb{F}_p^\times}(\Lambda),
 \qquad
 T = \alpha\omega.
-```
+$$
 
-For a multiplicative character $\psi\$, extended by $\psi(0)=0\$,
+For a multiplicative character $\psi$, extended by $\psi(0)=0$,
 
-```math
-\sum_{n=1}^{T} \psi(U_n)
-=
-\left(
-\sum_{t=0}^{\omega-1} \psi(\Lambda)^t
-\right)
-\left(
-\sum_{r=1}^{\alpha} \psi(U_r)
-\right).
-```
+$$
+\sum_{n=1}^{T} \psi(U_n)=\left(\sum_{t=0}^{\omega-1} \psi(\Lambda)^t\right)\left(\sum_{r=1}^{\alpha} \psi(U_r)\right),
+$$
 
 and similarly for $V_n$.
 
 Thus,
 
-```math
+$$
 \psi(\Lambda) \ne 1
-```
+$$
 
 forces exact full-period cancellation.
 
@@ -293,9 +288,9 @@ forces exact full-period cancellation.
 The repository includes exact-arithmetic verification of diagnostic examples from the manuscript.
 
 | Example | Parameters | Structural role |
-|:--|:--|:--|
-| Fibonacci modulo $7$ | $(P=1,\ Q=-1,\ p=7\)$ | Half-period quadratic cancellation |
-| Scalar example modulo $5$ | $(P=1,\ Q=2,\ p=5\)$ | Rank-block scalar cancellation with $\chi_p(-1)=1\$ |
+| :-- | :-- | :-- |
+| Fibonacci modulo $7$ | $(P=1,\ Q=-1,\ p=7)$ | Half-period quadratic cancellation |
+| Scalar example modulo $5$ | $(P=1,\ Q=2,\ p=5)$ | Rank-block scalar cancellation with $\chi_p(-1)=1$ |
 
 For
 
@@ -308,7 +303,7 @@ one has
 $$
 \alpha=6,
 \qquad
-\Lambda=U_7\equiv2\pmod5,
+\Lambda=U_7\equiv 2\pmod 5,
 $$
 
 and therefore
@@ -399,48 +394,51 @@ graph LR
     J --> K["Exact-arithmetic verification record"]
 ```
 
-The verification pipeline checks the explicitly stated diagnostic examples and structural identities selected for reproducibility.
+Two pure-Python verifiers are provided:
 
-It does not replace the mathematical proofs or establish new mathematical results.
+1. **`code/verify-examples.py`** — statement-by-statement verification of the two diagnostic examples in the manuscript (both mechanisms).
+2. **`code/verify-theorem-pipeline.py`** — constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
+
+The theorem-pipeline verifier does not replace the mathematical proofs or establish new mathematical results. It explicitly checks both $A^{T/2}=-I$ and $A^T=I$, so that the field-derived order of $\lambda$ is independently confirmed to be the matrix period of $A$.
 
 ---
 
 ## Reproducibility Principles
 
-1. **Exact arithmetic**  
+1. **Exact arithmetic**
    Mathematical checks use exact modular arithmetic.
 
-2. **Proof/computation separation**  
+2. **Proof/computation separation**
    The manuscript contains the proofs; the repository checks selected finite instances.
 
-3. **Traceable provenance**  
-   Release artifacts are associated with manifests and SHA-256 hashes.
-
-4. **No hidden research state**  
+3. **No hidden research state**
    Private research paths, credentials, temporary files, failed exploratory scripts, and internal governance records are not included in the public repository.
 
-5. **Versioned archival release**  
+4. **Versioned archival release**
    Public releases identify immutable tagged source snapshots.
 
 ---
 
 ## Usage
 
-The repository verifier has no third-party Python dependency.
+The repository verifiers have no third-party Python dependency.
 
 From the repository root, run:
 
 ```bash
-python code/verify_examples.py
+python code/verify-examples.py
+python code/verify-theorem-pipeline.py
 ```
 
 A successful run creates:
 
 ```text
-results/example_verification.json
+results/example-verification.json
+results/theorem-pipeline-verification.csv
+results/theorem-pipeline-verification.json
 ```
 
-The program uses exact modular arithmetic and checks the diagnostic examples described above.
+The programs use exact modular arithmetic and check the diagnostic examples and the specialized half-period pipeline described above.
 
 ---
 
@@ -457,10 +455,10 @@ For a conventional local build:
 ```bash
 cd manuscript
 
-pdflatex Main_P4_FQ_Preparation.tex
-bibtex Main_P4_FQ_Preparation
-pdflatex Main_P4_FQ_Preparation.tex
-pdflatex Main_P4_FQ_Preparation.tex
+pdflatex main-p4.tex
+bibtex main-p4
+pdflatex main-p4.tex
+pdflatex main-p4.tex
 ```
 
 The compiled preprint PDF is included in the release package.
@@ -474,40 +472,38 @@ The compiled preprint PDF is included in the release package.
 
 ```text
 half-period-involutions-in-inert-lucas-sequences/
-├── README.md
-├── LICENSE
-├── CITATION.cff
+│
+├── .gitignore
 ├── .zenodo.json
+├── CITATION.cff
+├── LICENSE
+├── README.md
+│
 ├── manuscript/
-│   ├── Main_P4_FQ_Preparation.tex
-│   ├── references_P4_Preprint.bib
-│   └── Main_P4_FQ_Preparation.pdf
+│   ├── main-p4.tex
+│   ├── main-p4.pdf
+│   └── references.bib
+│
 ├── code/
-│   └── verify_examples.py
-├── results/
-│   └── example_verification.json
-└── metadata/
-    ├── RELEASE_MANIFEST.json
-    └── SHA256SUMS.txt
+│   ├── verify-examples.py
+│   └── verify-theorem-pipeline.py
+│
+└── results/
+    ├── example-verification.json
+    ├── theorem-pipeline-verification.csv
+    └── theorem-pipeline-verification.json
 ```
 
 > [!NOTE]
-> The exact directory contents at the archival release are authoritative. The tree above is the intended public-release structure and must be reconciled with the actual branch contents before tagging.
+> The directory tree above defines the intended public release structure.
+> Before tagging, the actual branch contents must match this tree exactly.
 
 ---
 
-## Provenance and Integrity
+## Provenance and Archival Release
 
-Each archival release records:
-
-```text
-Git commit
-Git tag
-release manifest
-SHA256SUMS
-```
-
-The release manifest identifies the exact manuscript and reproducibility artifacts associated with that version.
+Each archival release is identified by its Git commit and release tag.
+The Zenodo archive provides the persistent archival record for the tagged release.
 
 Before the first tagged archival release:
 
@@ -521,7 +517,7 @@ After archival:
 Repository DOI: assigned by Zenodo
 ```
 
-The DOI must identify the specific archived release and must never be replaced by an invented, temporary, or unverified DOI.
+The DOI must identify the specific archived release and must not be entered into this README until Zenodo has actually minted and verified it.
 
 ---
 
@@ -600,4 +596,3 @@ Independent Researcher, Tehran, Iran
 
 Email: [majid.ghandali@gmail.com](mailto:majid.ghandali@gmail.com)  
 ORCID: [0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
-

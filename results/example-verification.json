@@ -1,0 +1,73 @@
+{
+  "artifact": "verify-examples.py",
+  "purpose": "Statement-by-statement verification of the two examples in Section Examples",
+  "examples": [
+    {
+      "name": "Fibonacci sequence modulo 7",
+      "label": "ex:fibonacci-7",
+      "parameters": {
+        "P": 1,
+        "Q": -1,
+        "p": 7,
+        "D": 5
+      },
+      "matrix_A": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "T": 16,
+      "half_period": 8,
+      "A8_equals_minus_I": true,
+      "A16_equals_I": true,
+      "U_anti_periodicity": true,
+      "V_anti_periodicity": true,
+      "chi_minus_1": -1,
+      "character_sum_U": 0,
+      "character_sum_V": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Inert scalar cancellation",
+      "label": "ex:scalar-cancellation",
+      "parameters": {
+        "P": 1,
+        "Q": 2,
+        "p": 5,
+        "D": 3
+      },
+      "initial_U": [
+        0,
+        1,
+        1,
+        4,
+        2,
+        4,
+        0,
+        2
+      ],
+      "alpha": 6,
+      "Lambda": 2,
+      "omega": 4,
+      "T_from_formula": 24,
+      "matrix_order": 24,
+      "matrix_order_equals_T": true,
+      "chi_Lambda": -1,
+      "chi_minus_1": 1,
+      "A_alpha_equals_Lambda_I": true,
+      "rank_block_propagation": true,
+      "block0_character_sum": 3,
+      "block1_character_sum": -3,
+      "full_character_sum_U": 0,
+      "full_character_sum_V": 0,
+      "full_character_sums_vanish": true,
+      "status": "PASS"
+    }
+  ],
+  "overall_status": "PASS"
+}
