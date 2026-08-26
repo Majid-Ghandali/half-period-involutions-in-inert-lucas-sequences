@@ -405,18 +405,18 @@ The theorem-pipeline verifier does not replace the mathematical proofs or establ
 
 ## Reproducibility Principles
 
-1. **Exact arithmetic**  
+1. **Exact arithmetic**
    Mathematical checks use exact modular arithmetic.
 
-2. **Proof/computation separation**  
+2. **Proof/computation separation**
    The manuscript contains the proofs; the repository checks selected finite instances.
-
-3. **No hidden research state**  
+   
+3. **No hidden research state**
    Private research paths, credentials, temporary files, failed exploratory scripts, and internal governance records are not included in the public repository.
-
-4. **Versioned archival release**  
+   
+4. **Versioned archival release**
    Public releases identify immutable tagged source snapshots.
-
+   
 ---
 
 ## Usage
@@ -502,7 +502,7 @@ half-period-involutions-in-inert-lucas-sequences/
 
 ## Provenance and Archival Release
 
-Each archival release is identified by its Git commit and release tag.  
+Each archival release is identified by its Git commit and release tag.
 The Zenodo archive provides the persistent archival record for the tagged release.
 
 Before the first tagged archival release:
