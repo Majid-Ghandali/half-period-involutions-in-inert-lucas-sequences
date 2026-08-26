@@ -1,0 +1,586 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\setlength{\emergencystretch}{1em}
+\raggedbottom
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences},
+  pdfauthor={Majid Ghandali}
+}
+
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Norm}{\operatorname{Norm}}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\Fpq}{\mathbb{F}_{p^2}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\chiP}{\chi_p}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\title{Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences}
+
+\author{
+  Majid Ghandali\\
+  Independent Researcher, Tehran, Iran\\
+  \href{mailto:majid.ghandali@gmail.com}{\texttt{majid.ghandali@gmail.com}}\\
+  ORCID: \href{https://orcid.org/0009-0001-1097-1770}{0009-0001-1097-1770}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We organize two elementary and exact cancellation mechanisms for quadratic-character sums attached to Lucas sequences modulo an inert odd prime. The first is translation by a matrix half-period, yielding the anti-periodicity relation $U_{n+T/2}=-U_n$. The second is rank-block scalar propagation, equivalently a geometric character factorization, in which the multiplier $\Lambda^k$ filters complete character sums. These mechanisms are logically distinct: the former depends on negation and the value of the character at $-1$, whereas the latter depends on the character of $\Lambda$. The determinant/norm relation is used only as an independent observation concerning parity and the divisibility $\ord(Q)\mid T$. No new rank--period theory is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Lucas sequences; rank of apparition; matrix period; finite-field characters; quadratic characters; exact cancellation.
+
+\noindent\textbf{MSC 2020:} 11B39, 11T23, 11L03.
+
+\section{Introduction}
+
+Let $(U_n)_{n\geq 0}$ be the Lucas sequence
+\[
+ U_0=0,\qquad U_1=1,\qquad
+ U_{n+2}=P U_{n+1}-Q U_n,
+ \qquad P,Q\in\Z.
+\]
+For an odd prime $p$, we study complete-period sums of the form
+\[
+ \sum_n \chiP(U_n),
+\]
+where $\chiP$ is the quadratic character of $\Fp$, extended by $\chiP(0)=0$.
+
+Periodicity, ranks of apparition, and character sums for Lucas sequences have a substantial classical and modern literature; see, among others, \cite{Lucas1878,Lehmer1930,Williams,Everest2003,BHV2001,Stewart2013,Renault2013,Somer1980,FiebigMbirikaSpilker2025,BlackburnShparlinski2006,LN,Wall1960,Sanna2022,Sanna2024}. The purpose of this concise note is structural. We separate two cancellation arguments that are often used in different forms. One is a half-period involution of the companion matrix. The other is rank-block scalar propagation, or equivalently geometric character factorization, arising from the scalar multiplier of each rank block. The determinant/norm relation is kept separate as an independent observation about parity and the matrix period. The distinction matters, especially when $\chiP(-1)=1$ but $\chiP(\Lambda)=-1$.
+
+\section{Setup}
+
+Throughout, let $P,Q\in\Z$, let $p$ be an odd prime, and put
+\[
+ D=P^2-4Q.
+\]
+Assume that the Lucas sequence is non-degenerate over characteristic zero, that
+\[
+ p\nmid QD,
+\]
+and that all congruences in what follows are taken modulo $p$.
+
+We use the following standard terminology.
+
+\begin{definition}
+The Lucas sequence is \emph{non-degenerate} if, for its characteristic roots
+$\lambda$ and $\mu$ in characteristic zero, the quotient $\lambda/\mu$ is not a root of unity. The prime $p$ is called \emph{inert} for the sequence if
+\[
+ \chiP(D)=-1;
+\]
+equivalently, the polynomial
+\[
+ f(X)=X^2-PX+Q\in\Fp[X]
+\]
+is irreducible.
+\end{definition}
+
+In the inert case,
+\[
+ \Fpq=\Fp(\sqrt D),
+\]
+and the two roots of $f$ are
+\[
+ \lambda=\frac{P+\sqrt D}{2},
+ \qquad
+ \mu=\frac{P-\sqrt D}{2}.
+\]
+They satisfy
+\[
+ \lambda+\mu=P,\qquad \lambda\mu=Q,
+ \qquad \mu=\lambda^p,\qquad \lambda=\mu^p.
+\]
+The Binet formulas are
+\[
+ U_n=\frac{\lambda^n-\mu^n}{\lambda-\mu},
+ \qquad
+ V_n=\lambda^n+\mu^n,
+ \label{eq:binet}
+\]
+where
+\[
+ V_0=2,\qquad V_1=P,\qquad
+ V_{n+2}=P V_{n+1}-Q V_n.
+\]
+Both sequences are regarded modulo $p$.
+
+Let
+\[
+ A=
+ \begin{pmatrix}
+ P&-Q\\
+ 1&0
+ \end{pmatrix}
+ \in\operatorname{GL}_2(\Fp).
+ \label{eq:companion}
+\]
+For $n\geq1$,
+\[
+ A^n=
+ \begin{pmatrix}
+ U_{n+1}&-Q U_n\\
+ U_n&-Q U_{n-1}
+ \end{pmatrix}.
+ \label{eq:matrix-power}
+\]
+In particular, the lower-left entry of $A^n$ is $U_n$.
+
+\section{Matrix Period}
+
+Define
+\[
+ T=\ord_{\operatorname{GL}_2(\Fp)}(A).
+\]
+
+\begin{proposition}[Order of the eigenvalues]
+\label{prop:eigenvalue-order}
+In the inert case,
+\[
+ T=\ord_{\Fpq^\times}(\lambda)
+  =\ord_{\Fpq^\times}(\mu).
+\]
+Consequently,
+\[
+ T\mid p^2-1.
+\]
+\end{proposition}
+
+\begin{proof}
+The matrix $A$ is diagonalizable over $\Fpq$, with eigenvalues $\lambda$ and $\mu$. Since $\mu=\lambda^p$, the two eigenvalues have the same multiplicative order. Hence the order of $A$ is their common order. This order divides
+\[
+ |\Fpq^\times|=p^2-1.
+\]
+\end{proof}
+
+\begin{proposition}[Half-period criterion]
+\label{prop:half-period-criterion}
+For an integer $m$, one has
+\[
+ A^m=-I
+\]
+if and only if $T$ is even and
+\[
+ m\equiv \frac{T}{2}\pmod T.
+\]
+In particular, if $T$ is even, then
+\[
+ A^{T/2}=-I
+ \qquad\text{and}\qquad
+ U_{n+T/2}=-U_n,\quad
+ V_{n+T/2}=-V_n
+\]
+for every $n\in\Z$.
+\end{proposition}
+
+\begin{proof}
+By \cref{prop:eigenvalue-order}, $A^m=-I$ is equivalent to
+\[
+ \lambda^m=\mu^m=-1.
+\]
+Since $\lambda$ and $\mu$ both have order $T$, this occurs precisely when $T$ is even and
+\[
+ m\equiv T/2\pmod T.
+\]
+For $m=T/2$, the identity $A^{T/2}=-I$ and the matrix formula \eqref{eq:matrix-power} give the assertion for $U_n$. Alternatively, the Binet formulas \eqref{eq:binet} give both anti-periodicity relations directly.
+\end{proof}
+
+\begin{remark}[Determinant and norm]
+\label{rem:determinant-norm}
+Since
+\[
+ \det(A)=Q,
+\]
+the relation $A^T=I$ implies
+\[
+ Q^T=1\pmod p,
+ \qquad
+ \ord_{\Fp^\times}(Q)\mid T.
+\]
+The same relation has the field-theoretic interpretation
+\[
+ \Norm_{\Fpq/\Fp}(\lambda)=\lambda\lambda^p
+ =\lambda\mu=Q.
+\]
+Thus the determinant of the companion matrix is the norm of either characteristic root. This is an independent observation and does not itself imply a half-period involution.
+\end{remark}
+
+\section{Half-Period Translation and Determinant/Norm Observation}
+
+The half-period relation in \cref{prop:half-period-criterion} is a translation statement on indices. It should not be confused with the determinant or norm constraint in \cref{rem:determinant-norm}. The latter forces the order of $Q$ to divide the matrix period, but does not by itself imply that the period is even or that its midpoint acts as $-I$.
+
+For a function $g:\Fp\to\mathbb{C}$ satisfying
+\[
+ g(-x)=-g(x),
+\]
+the half-period relation immediately yields exact cancellation on any index set invariant under the translation $n\mapsto n+T/2$.
+
+\begin{proposition}[Half-period cancellation]
+\label{prop:half-period-cancellation}
+Assume the hypotheses of \cref{prop:half-period-criterion}. Let
+$I\subseteq\Z/T\Z$ be stable under
+\[
+ n\longmapsto n+\frac{T}{2}.
+\]
+If $g:\Fp\to\mathbb{C}$ is odd, then
+\[
+ \sum_{n\in I}g(U_n)=0
+ \qquad\text{and}\qquad
+ \sum_{n\in I}g(V_n)=0.
+\]
+\end{proposition}
+
+\begin{proof}
+The translation $n\mapsto n+T/2$ partitions $I$ into pairs. By \cref{prop:half-period-criterion},
+\[
+ g(U_{n+T/2})=g(-U_n)=-g(U_n),
+\]
+and the same argument applies to $V_n$. Summing over the pairs proves both identities.
+\end{proof}
+
+\begin{corollary}[Quadratic half-period cancellation]
+\label{cor:quadratic-half-period}
+If $T$ is even, $I$ is stable under $n\mapsto n+T/2$, and
+\[
+ \chiP(-1)=-1,
+\]
+then
+\[
+ \sum_{n\in I}\chiP(U_n)=0
+ \qquad\text{and}\qquad
+ \sum_{n\in I}\chiP(V_n)=0.
+\]
+\end{corollary}
+
+\begin{proof}
+The extension $\chiP(0)=0$ preserves the identity
+\[
+ \chiP(-x)=\chiP(-1)\chiP(x)=-\chiP(x)
+\]
+for every $x\in\Fp$. Apply \cref{prop:half-period-cancellation}.
+\end{proof}
+
+\section{Rank Blocks and Scalar Character Filtering}
+
+Let
+\[
+ \alpha=\min\{n\geq1:U_n=0\pmod p\}
+\]
+be the rank of apparition of $p$, and define
+\[
+ \Lambda=U_{\alpha+1}\pmod p.
+\]
+
+\begin{lemma}[Rank characterization]
+\label{lem:rank-characterization}
+In the inert case,
+\[
+ U_n=0\pmod p
+ \quad\Longleftrightarrow\quad
+ \left(\frac{\lambda}{\mu}\right)^n=1.
+\]
+Consequently,
+\[
+ \alpha=\ord_{\Fpq^\times}\left(\frac{\lambda}{\mu}\right).
+\]
+\end{lemma}
+
+\begin{proof}
+Since $\lambda-\mu\neq0$ in $\Fpq$, the Binet formula gives
+\[
+ U_n=0
+ \quad\Longleftrightarrow\quad
+ \lambda^n-\mu^n=0
+ \quad\Longleftrightarrow\quad
+ \left(\frac{\lambda}{\mu}\right)^n=1.
+\]
+The assertion follows from the definition of $\alpha$.
+\end{proof}
+
+\begin{proposition}[Rank multiplier and period decomposition]
+\label{prop:rank-multiplier}
+One has
+\[
+ A^\alpha=\Lambda I.
+ \label{eq:rank-scalar}
+\]
+If
+\[
+ \omega=\ord_{\Fp^\times}(\Lambda),
+\]
+then
+\[
+ T=\alpha\omega.
+ \label{eq:period-decomposition}
+\]
+Moreover, for every $k\geq0$ and $1\leq j\leq\alpha$,
+\[
+ A^{k\alpha+j}=\Lambda^kA^j,
+ \qquad
+ U_{k\alpha+j}=\Lambda^kU_j,
+ \qquad
+ V_{k\alpha+j}=\Lambda^kV_j.
+ \label{eq:block-propagation}
+\]
+\end{proposition}
+
+\begin{proof}
+Using $U_\alpha=0$ in \eqref{eq:matrix-power},
+\[
+ A^\alpha=
+ \begin{pmatrix}
+ U_{\alpha+1}&0\\
+ 0&-Q U_{\alpha-1}
+ \end{pmatrix}.
+\]
+The recurrence at index $\alpha-1$ gives
+\[
+ U_{\alpha+1}=P U_\alpha-Q U_{\alpha-1}
+             =-Q U_{\alpha-1}.
+\]
+Therefore $A^\alpha=\Lambda I$.
+
+A standard divisibility property of ranks of apparition gives
+\[
+ U_n=0\pmod p\quad\Longrightarrow\quad \alpha\mid n.
+\]
+If $A^n=I$, then the lower-left entry in \eqref{eq:matrix-power} gives $U_n=0$, so $\alpha\mid n$. Writing $n=k\alpha$, we obtain
+\[
+ A^n=(A^\alpha)^k=\Lambda^k I.
+\]
+The least positive $n$ for which this equals $I$ is $\alpha\omega$, proving \eqref{eq:period-decomposition}.
+
+Finally,
+\[
+ A^{k\alpha+j}
+ =(A^\alpha)^kA^j
+ =\Lambda^kA^j,
+\]
+which gives the formula for $U_{k\alpha+j}$ by comparison of lower-left entries. Since $A^\alpha$ has eigenvalues $\lambda^\alpha$ and $\mu^\alpha$ and equals $\Lambda I$, one has
+\[
+ \lambda^\alpha=\mu^\alpha=\Lambda.
+\]
+The Binet formula for $V_n$ therefore gives
+\[
+ V_{k\alpha+j}
+ =\lambda^{k\alpha+j}+\mu^{k\alpha+j}
+ =\Lambda^k(\lambda^j+\mu^j)
+ =\Lambda^kV_j.
+\]
+\end{proof}
+
+\begin{proposition}[Full-period character factorization]
+\label{prop:full-period-factorization}
+Let $\psi$ be any multiplicative character of $\Fp^\times$, extended by $\psi(0)=0$. For $X=U$ or $X=V$,
+\[
+ \sum_{n=1}^{T}\psi(X_n)
+ =
+ \left(\sum_{k=0}^{\omega-1}\psi(\Lambda)^k\right)
+ \left(\sum_{j=1}^{\alpha}\psi(X_j)\right).
+ \label{eq:full-period-factorization}
+\]
+In particular, if
+\[
+ \psi(\Lambda)\neq1,
+\]
+then
+\[
+ \sum_{n=1}^{T}\psi(U_n)=0
+ \qquad\text{and}\qquad
+ \sum_{n=1}^{T}\psi(V_n)=0.
+\]
+\end{proposition}
+
+\begin{proof}
+Partition the complete period into the blocks
+\[
+ n=k\alpha+j,
+ \qquad
+ 0\leq k\leq\omega-1,\quad 1\leq j\leq\alpha.
+\]
+By \cref{prop:rank-multiplier},
+\[
+ X_{k\alpha+j}=\Lambda^kX_j.
+\]
+Therefore,
+\[
+ \psi(X_{k\alpha+j})
+ =\psi(\Lambda)^k\psi(X_j).
+\]
+Summing first over $j$ and then over $k$ proves \eqref{eq:full-period-factorization}. If $\psi(\Lambda)\neq1$, the first factor is a geometric sum over a complete cycle of $\psi(\Lambda)$ and is zero.
+\end{proof}
+
+\begin{corollary}[Quadratic scalar cancellation]
+\label{cor:quadratic-scalar}
+If
+\[
+ \chiP(\Lambda)=-1,
+\]
+then $\omega$ is even and
+\[
+ \sum_{n=1}^{T}\chiP(U_n)=0
+ \qquad\text{and}\qquad
+ \sum_{n=1}^{T}\chiP(V_n)=0.
+\]
+\end{corollary}
+
+\begin{proof}
+The condition $\chiP(\Lambda)=-1$ implies that $\Lambda$ has even order, so $\omega$ and $T=\alpha\omega$ are even. The vanishing follows from \cref{prop:full-period-factorization}, since $\chiP(\Lambda)\neq1$.
+\end{proof}
+
+\begin{remark}[Two different mechanisms]
+\label{rem:two-mechanisms}
+The cancellation in \cref{cor:quadratic-half-period} is a translation pairing:
+\[
+ X_{n+T/2}=-X_n.
+\]
+It requires an appropriate index-set symmetry and an odd character, or more generally an odd test function. By contrast, the cancellation in \cref{cor:quadratic-scalar} is rank-block scalar propagation, equivalently a geometric character factorization:
+\[
+ X_{k\alpha+j}=\Lambda^kX_j.
+\]
+It requires $\psi(\Lambda)\neq1$ and does not require $\psi(-1)=-1$. Thus scalar cancellation can occur even when the half-period negation pairing is ineffective.
+\end{remark}
+
+\section{Examples}
+
+\begin{example}[Fibonacci sequence modulo $7$]
+\label{ex:fibonacci-7}
+Take
+\[
+ (P,Q,p)=(1,-1,7).
+\]
+Then
+\[
+ D=P^2-4Q=5,
+\]
+which is a nonsquare modulo $7$. Hence $X^2-X-1$ is irreducible over $\mathbb{F}_7$. The companion matrix is
+\[
+ A=
+ \begin{pmatrix}
+ 1&1\\
+ 1&0
+ \end{pmatrix}.
+\]
+Direct exponentiation gives
+\[
+ A^8=-I,\qquad A^{16}=I.
+\]
+Thus
+\[
+ T=16,\qquad U_{n+8}=-U_n\pmod7.
+\]
+Since
+\[
+ \chiP(-1)=\chi_7(-1)=-1,
+\]
+the quadratic-character values cancel under the half-period translation:
+\[
+ \chiP(U_{n+8})=-\chiP(U_n).
+\]
+This is the half-period involution mechanism of \cref{cor:quadratic-half-period}.
+\end{example}
+
+\begin{example}[Inert scalar cancellation]
+\label{ex:scalar-cancellation}
+Take
+\[
+ (P,Q,p)=(1,2,5).
+\]
+Here
+\[
+ D=1-8=-7\equiv3\pmod5,
+\]
+and $3$ is a nonsquare modulo $5$. Hence $X^2-X+2$ is irreducible over $\mathbb{F}_5$. The initial values are
+\[
+ U_0,U_1,U_2,U_3,U_4,U_5,U_6,U_7
+ =
+ 0,1,1,4,2,4,0,2
+ \pmod5.
+\]
+The rank and scalar multiplier are
+\[
+ \alpha=6,\qquad \Lambda=U_{\alpha+1}=U_7=2.
+\]
+Moreover,
+\[
+ \chiP(\Lambda)=\chi_5(2)=-1,
+ \qquad
+ \omega=\ord_{\mathbb{F}_5^\times}(2)=4,
+ \qquad
+ T=\alpha\omega=24.
+\]
+On the other hand,
+\[
+ \chiP(-1)=\chi_5(4)=1.
+\]
+Therefore the cancellation is not produced by the half-period negation pairing. Instead, \cref{prop:rank-multiplier} gives
+\[
+ U_{6k+j}=2^kU_j\pmod5,
+ \qquad
+ V_{6k+j}=2^kV_j\pmod5.
+\]
+For the quadratic character, the first two rank blocks satisfy
+\[
+ \sum_{j=1}^{6}\chiP(U_j)
+ +
+ \sum_{j=1}^{6}\chiP(U_{6+j})
+ =0.
+\]
+Indeed, the first sum is $3$ and the second is $-3$. This is scalar character filtering, not a negation pairing.
+\end{example}
+
+\section{Scope Remark}
+
+This note does not propose a new rank--period theory. The decomposition into rank blocks follows from the companion-matrix identity, the definition of the rank of apparition, and the standard divisibility property $\alpha\mid n$ whenever $U_n=0\pmod p$. The structural point is the separation of two exact cancellation criteria: half-period translation and rank-block scalar propagation, equivalently geometric character factorization.
+
+The hypotheses are essential. If $p\mid Q$, the companion matrix need not be invertible. If $p\mid D$, the characteristic polynomial is not separable in the required form. In either situation, the inert quadratic-extension argument used here does not apply without modification. Likewise, an even matrix period alone does not imply $A^{T/2}=-I$; the half-period congruence in \cref{prop:half-period-criterion} is the necessary condition.
+
+\section*{Acknowledgements}
+
+The author discloses that artificial intelligence was used for linguistic editing, organizational synthesis, notation normalization, and LaTeX polishing. The author independently verified the mathematical statements, examples, numerical checks, citations, and reproducibility claims, and accepts full responsibility for the final manuscript. The author's ORCID is \href{https://orcid.org/0009-0001-1097-1770}{0009-0001-1097-1770}.
+
+\section*{Funding}
+
+No funding was received for this work.
+
+\section*{Disclosure}
+
+The author declares no conflict of interest.
+
+\section*{Data Availability}
+
+No external datasets were used. The numerical checks and examples are reproducible directly from the displayed recurrences, companion matrices, and finite-field computations.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
