@@ -104,6 +104,7 @@ The manuscript studies two exact structural mechanisms:
 | Verification pipeline | [Verification Pipeline](#verification-pipeline) |
 | Build the preprint | [Build the Preprint](#build-the-preprint) |
 | Repository structure | [Repository Structure](#repository-structure) |
+| Provenance and integrity | [Provenance and Integrity](#provenance-and-integrity) |
 | Citation | [Citation](#citation) |
 | Zenodo release | [Zenodo Archival Release](#zenodo-archival-release) |
 
@@ -121,6 +122,7 @@ The manuscript studies two exact structural mechanisms:
 - [Usage](#usage)
 - [Build the Preprint](#build-the-preprint)
 - [Repository Structure](#repository-structure)
+- [Provenance and Integrity](#provenance-and-integrity)
 - [Citation](#citation)
 - [Zenodo Archival Release](#zenodo-archival-release)
 - [Release Discipline](#release-discipline)
@@ -397,7 +399,8 @@ graph LR
     J --> K["Exact-arithmetic verification record"]
 ```
 
-The verification pipeline checks the explicitly stated diagnostic examples and structural identities selected for reproducibility.
+The theorem-pipeline verifier provides a constructive finite verification path for the specialized branch $$Q\equiv-1\pmod p$$.
+
 
 It does not replace the mathematical proofs or establish new mathematical results.
 
@@ -411,13 +414,10 @@ It does not replace the mathematical proofs or establish new mathematical result
 2. **Proof/computation separation**  
    The manuscript contains the proofs; the repository checks selected finite instances.
 
-3. **Traceable provenance**  
-   Release artifacts are associated with manifests and SHA-256 hashes.
-
-4. **No hidden research state**  
+3. **No hidden research state**  
    Private research paths, credentials, temporary files, failed exploratory scripts, and internal governance records are not included in the public repository.
 
-5. **Versioned archival release**  
+4. **Versioned archival release**  
    Public releases identify immutable tagged source snapshots.
 
 ---
@@ -494,8 +494,8 @@ half-period-involutions-in-inert-lucas-sequences/
 └── results/
     ├── example-verification.json
     ├── theorem-pipeline-verification.csv
-    └── theorem-pipeline-verification.json```
-
+    └── theorem-pipeline-verification.json
+```
 > [!NOTE]
 > The exact directory contents at the archival release are authoritative. The tree above is the intended public-release structure and must be reconciled with the actual branch contents before tagging.
 
