@@ -6,6 +6,7 @@ authors:
   - family-names: Ghandali
     given-names: Majid
     orcid: https://orcid.org/0009-0001-1097-1770
+    DOI: 10.5281/zenodo.22118430
 version: 1.0.0-preprint
 date-released: 2026-08-19
 repository-code: https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences
