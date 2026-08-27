@@ -1,11 +1,5 @@
 # Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-> Reproducibility and archival materials for **“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”**
-
-This repository accompanies a focused structural note on Lucas recurrences modulo inert primes. The manuscript studies the half-period scalar involution of the companion matrix and organizes two exact mechanisms that can force cancellation of full-perio# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
-
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22118430.svg)](https://doi.org/10.5281/zenodo.22118430)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12.7-blue.svg)](https://www.python.org/downloads/release/python-3127/)
@@ -18,17 +12,17 @@ This repository accompanies a focused structural note on Lucas recurrences modul
 > **Current reproducibility release:** [`v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 > **Citable archival DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
 
+---
+
+## Overview
+
+This repository provides the source manuscript, collected preprints, diagnostic computational reviews, and archival metadata related to the manuscript, including a structural note focusing on Lucas's recursive modular inefficient primes. The manuscript studies the semi-periodic scalar input of the associated matrix and organizes two precise mechanisms that can implement the elimination of full-period semi-periodic inputs and the precise elimination of Lucas's inefficient sequences.
 
 ---
 
 ## Important Scope Statement
 
-This repository provides the manuscript source, compiled preprint, diagnostic computational checks and archival metadata associated with
-the manuscript.
-
 The accompanying manuscript contains the mathematical statements, hypotheses, proofs, and literature positioning.
-
-
 
 > [!IMPORTANT]
 > The mathematical proofs are contained in the accompanying manuscript. The computations in this repository verify selected diagnostic examples and implementation details; they do **not** replace the proofs.
