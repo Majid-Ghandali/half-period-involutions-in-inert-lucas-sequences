@@ -16,7 +16,13 @@
 
 ## Overview
 
-This repository provides the source manuscript, collected preprints, diagnostic computational reviews, and archival metadata related to the manuscript, including a structural note focusing on Lucas's recursive modular inefficient primes. The manuscript studies the semi-periodic scalar input of the associated matrix and organizes two precise mechanisms that can implement the elimination of full-period semi-periodic inputs and the precise elimination of Lucas's inefficient sequences.
+This repository provides the manuscript source, compiled preprint, diagnostic
+computational verification, and archival metadata associated with the paper
+**“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”**
+
+The manuscript studies Lucas recurrences modulo inert primes, with particular
+attention to the half-period scalar involution of the companion matrix and two
+exact mechanisms that can force cancellation of full-period character sums.
 
 ---
 
@@ -277,7 +283,8 @@ $$
 \psi(\Lambda) \ne 1
 $$
 
-forces exact full-period cancellation.
+forces exact cancellation of the corresponding full-period
+character sum.
 
 > [!NOTE]
 > The rank--period--multiplier framework and the underlying classical Lucas identities are explicitly attributed in the accompanying manuscript. This repository does not present them as newly discovered theory.
