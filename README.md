@@ -3,8 +3,7 @@
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22118430.svg)](https://doi.org/10.5281/zenodo.22118430)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12.7-blue.svg)](https://www.python.org/downloads/release/python-3127/)
-[![GitHub Release Date](https://img.shields.io/github/release-date/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences)](Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases)
-
+[![GitHub Release Date](https://img.shields.io/github/release-date/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences)](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases)
 > **Reproducibility and archival materials for**  
 > *“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”*
 > 
