@@ -29,15 +29,16 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\chiP}{\chi_p}
 
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{remark}[theorem]{Remark}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
 
 \title{Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences}
 
@@ -45,9 +46,10 @@
   Majid Ghandali\\
   Independent Researcher, Tehran, Iran\\
   \href{mailto:majid.ghandali@gmail.com}{\texttt{majid.ghandali@gmail.com}}\\
-  ORCID: \href{https://orcid.org/0009-0001-1097-1770}{0009-0001-1097-1770}
+ ORCID:
+\href{https://orcid.org/0009-0001-1097-1770}
+{0009-0001-1097-1770}
 }
-
 \date{}
 
 \begin{document}
@@ -55,7 +57,21 @@
 \maketitle
 
 \begin{abstract}
-We organize two elementary and exact cancellation mechanisms for quadratic-character sums attached to Lucas sequences modulo an inert odd prime. The first is translation by a matrix half-period, yielding the anti-periodicity relation $U_{n+T/2}=-U_n$. The second is rank-block scalar propagation, equivalently a geometric character factorization, in which the multiplier $\Lambda^k$ filters complete character sums. These mechanisms are logically distinct as structural arguments: the former is an odd-function pairing under index translation, whereas the latter is multiplicative filtering by the rank scalar. The determinant/norm relation links the companion-matrix determinant to the field norm of a characteristic root and forces $\ord(Q)\mid T$; it is kept as an independent observation and is not itself a cancellation criterion. In the quadratic-character full-period setting the two criteria are nevertheless related: the half-period criterion implies the rank-block scalar criterion, while the converse need not hold. No new rank--period theory is claimed.
+We organize two elementary and exact cancellation mechanisms for
+quadratic-character sums attached to Lucas sequences modulo an inert odd
+prime. The first is translation by a matrix half-period, yielding the
+anti-periodicity relation $U_{n+T/2}=-U_n$. The second is rank-block scalar
+propagation, equivalently a geometric character factorization, in which the
+multiplier $\Lambda^k$ filters complete character sums. These mechanisms
+arise from different structural viewpoints: the former is an odd-function
+pairing under index translation, whereas the latter is multiplicative
+filtering by the rank scalar. The determinant/norm relation links the
+companion-matrix determinant to the field norm of a characteristic root and
+forces $\ord(Q)\mid T$; it is kept as an independent observation and is not
+itself a cancellation criterion. In the quadratic-character full-period
+setting, the two criteria are nevertheless related: the half-period
+criterion implies the rank-block scalar criterion, while the converse need
+not hold. No new rank--period theory is claimed.
 \end{abstract}
 
 \noindent\textbf{Keywords:} Lucas sequences; rank of apparition; matrix period; finite-field characters; quadratic characters; exact cancellation.
@@ -77,12 +93,26 @@ For an odd prime $p$, we study complete-period sums of the form
 where $\chiP$ is the quadratic character of $\Fp$, extended by $\chiP(0)=0$.
 
 Periodicity, ranks of apparition, and character sums for Lucas sequences have a substantial classical and modern literature; see, among others, \cite{Lucas1878,Lehmer1930,Williams,Everest2003,BHV2001,Stewart2013,Wall1960,Robinson1963,Vinson1963,Renault1996,Renault2013,Somer1980,GuptaRockstrohSu2012,FiebigMbirikaSpilker2025,BlackburnShparlinski2006,Sanna2022,Sanna2024,LN}. The purpose of this concise note is structural. We separate two cancellation arguments that are often used in different forms. One is a half-period involution of the companion matrix. The other is rank-block scalar propagation, or equivalently geometric character factorization, arising from the scalar multiplier of each rank block. The determinant/norm relation is kept separate as an independent observation about the matrix period. The distinction matters, especially when $\chiP(-1)=1$ but $\chiP(\Lambda)=-1$. Among recent contributions, Fiebig, Mbirika, and Spilker
-\cite{FiebigMbirikaSpilker2025} study the period, entry-point, and order
-statistics of Lucas sequences modulo $m$, including antipodal
-additive-inverse relations when $q=-1$. The present note is complementary:
-in the inert prime setting, the companion-matrix and quadratic-extension
-structure yields cancellation criteria for character sums, a level of
-structure beyond the statistics of the period alone. For the quadratic character on a full matrix period the two criteria are not independent: by \cref{prop:chi-lambda}, the half-period criterion always implies the scalar criterion, while the converse need not hold.
+\cite{FiebigMbirikaSpilker2025} develop a period--entry-point framework
+for Lucas sequences modulo $m$, including structural relations among
+periods, entry points, and associated orders. The present work considers
+a more specialized inert-prime setting, where the companion matrix admits
+a quadratic-extension interpretation. In this setting, the multiplier
+associated with the rank of apparition provides an additional scalar
+structure that leads to exact character-sum factorization. Thus, the
+present approach complements the period--entry-point viewpoint by
+exploiting multiplicative-order information available in the inert
+quadratic-extension framework.
+
+The contribution of the note can be summarized as follows. We formulate two exact
+cancellation criteria for complete-period character sums in the inert Lucas setting
+--- an index-translation criterion induced by the half-period involution
+$A^{T/2}=-I$, and a rank-block scalar criterion induced by $A^\alpha=\Lambda I$
+--- and we prove that, for the quadratic character over a full matrix period, the
+former implies the latter, while the converse fails as a cancellation argument when
+$\chiP(-1)=1$ (\cref{prop:chi-lambda}, \cref{ex:scalar-cancellation}). The
+mechanisms themselves are elementary; the point is their precise separation and the
+resulting hierarchy.
 
 \section{Setup}
 
@@ -166,7 +196,7 @@ Define
 \[
  T=\ord_{\operatorname{GL}_2(\Fp)}(A).
 \]
-Since $A^T=I$, the sequences $(U_n)_{n\geq0}$ and $(V_n)_{n\geq0}$ are periodic modulo $p$ with period $T$.
+Since $A^T=I$, the sequences $(U_n)_{n\geq0}$ and $(V_n)_{n\geq0}$ are periodic modulo $p$, and $T$ is a common period for both sequences.
 
 \begin{proposition}[Order of the eigenvalues]
 \label{prop:eigenvalue-order}
@@ -412,13 +442,30 @@ which gives the formula for $U_{k\alpha+j}$ by comparison of lower-left entries,
 
 \begin{remark}[Classical context]
 \label{rem:classical-context}
-The identity $A^\alpha=\Lambda I$ and the decomposition \eqref{eq:period-decomposition} are the inert-case form of the classical relation between the period, the rank of apparition, and the order of the multiplier for Fibonacci and Lucas sequences \cite{Robinson1963,Vinson1963,Wall1960,Renault1996,Renault2013}. The divisibility $\alpha\mid p+1$ of \cref{cor:alpha-divides-p-plus-1} is classical as well \cite{Lucas1878,Wall1960,GuptaRockstrohSu2012}. Taking determinants in $A^\alpha=\Lambda I$ also yields the norm identity $\Lambda^2=Q^{\alpha}$, which links the rank multiplier to \cref{rem:determinant-norm}. 
-We note that \cite{FiebigMbirikaSpilker2025} deliberately develop their
-theory without using the interpretation of the order statistic as the
-multiplicative order of the rank multiplier; in the inert setting, this
-interpretation, together with the scalar propagation of
-\cref{prop:rank-multiplier}, is precisely what yields the geometric
-character factorization of \cref{prop:full-period-factorization}.
+
+The identity $A^\alpha=\Lambda I$ and the decomposition
+\eqref{eq:period-decomposition} represent the inert-case realization of
+classical relationships among periods, ranks of apparition, and multiplier
+orders for Fibonacci and Lucas sequences
+\cite{Robinson1963,Vinson1963,Wall1960,Renault1996,Renault2013}.
+The divisibility $\alpha\mid p+1$ in
+\cref{cor:alpha-divides-p-plus-1} is classical as well
+\cite{Lucas1878,Wall1960,GuptaRockstrohSu2012}.
+Taking determinants in $A^\alpha=\Lambda I$ further gives
+\[
+\Lambda^2=Q^\alpha,
+\]
+which connects the rank multiplier with the determinant/norm relation of
+\cref{rem:determinant-norm}.
+
+The period--entry-point framework developed by Fiebig, Mbirika, and Spilker
+\cite{FiebigMbirikaSpilker2025} provides a complementary description of
+period, entry-point, and order phenomena for Lucas sequences modulo $m$.
+In the present inert prime setting, the multiplier admits an explicit
+finite-field interpretation through the characteristic root, and its
+multiplicative order gives the scalar decomposition underlying the rank-block
+character factorization developed below.
+
 \end{remark}
 
 \begin{proposition}[Full-period character factorization]
@@ -521,7 +568,12 @@ It requires an appropriate index-set symmetry and an odd character, or more gene
 \]
 It requires $\psi(\Lambda)\neq1$ and does not require $\psi(-1)=-1$. Thus scalar cancellation can occur even when the half-period negation pairing is ineffective, as in \cref{ex:scalar-cancellation}.
 
-For the quadratic character on a full matrix period, \cref{prop:chi-lambda} nevertheless shows that the two criteria are related: the half-period criterion implies the scalar criterion, while the converse need not hold. Moreover, since a nonsquare in the cyclic group $\Fp^\times$ has even multiplicative order (see the proof of \cref{prop:chi-lambda}(b)), the condition $\chiP(\Lambda)=-1$ forces $\omega$, and hence $T=\alpha\omega$, to be even, so that $A^{T/2}=-I$ by \cref{prop:half-period-criterion}. Anti-periodicity is thus always present when the scalar criterion is active; whether it produces quadratic-character cancellation still depends on $\chiP(-1)$.
+For the quadratic character on a full matrix period, \cref{prop:chi-lambda} nevertheless shows that the two criteria are related: the half-period criterion implies the scalar criterion, while the converse need not hold. Moreover, the scalar criterion also forces the existence of a half-period involution:
+indeed, $\chiP(\Lambda)=-1$ implies that $\omega$ is even and hence
+$T=\alpha\omega$ is even, so that $A^{T/2}=-I$ by
+\cref{prop:half-period-criterion}. However, the resulting anti-periodicity
+produces quadratic-character cancellation only when
+$\chiP(-1)=-1$.
 \end{remark}
 
 \section{Examples}
@@ -621,6 +673,23 @@ The conditions $T$ even and $A^{T/2}=-I$ alone do not force quadratic-character 
 Together, \cref{ex:fibonacci-7}, \cref{ex:scalar-cancellation}, and this remark realize the three configurations of the two quadratic criteria on a full period that can occur: both active, scalar only, and neither. By \cref{prop:chi-lambda}, the fourth configuration---half-period cancellation without scalar cancellation---cannot occur.
 \end{remark}
 
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+& $p$ & $\chiP(-1)$ & $\chiP(\Lambda)$ & Half-period & Scalar \\
+\midrule
+\cref{ex:fibonacci-7} & $7$ & $-1$ & $-1$ & active & active \\
+\cref{ex:scalar-cancellation} & $5$ & $1$ & $-1$ & silent & active \\
+\cref{rem:even-period-not-enough} & $5$ & $1$ & $1$ & silent & silent \\
+\bottomrule
+\end{tabular}
+\caption{The three configurations of the two quadratic criteria realized by the
+examples. The fourth formal configuration (half-period active, scalar silent) is
+excluded by \cref{prop:chi-lambda}.}
+\label{tab:configurations}
+\end{table}
+
 \section{Scope Remark}
 
 This note does not propose a new rank--period theory. The decomposition into rank blocks follows from the companion-matrix identity, the definition of the rank of apparition, and the divisibility $\alpha\mid n$ whenever $U_n=0\pmod p$, which in the inert setting is an immediate consequence of \cref{lem:rank-characterization}. The structural point is the separation of two exact cancellation criteria as arguments: half-period translation and rank-block scalar propagation, equivalently geometric character factorization. For the quadratic character on a full period these criteria are related as in \cref{prop:chi-lambda}, but they remain distinct as proofs.
@@ -629,7 +698,12 @@ The hypotheses are essential. If $p\mid Q$, the companion matrix need not be inv
 
 \section*{Acknowledgements}
 
-The author discloses that artificial intelligence was used for linguistic editing, organizational composition, notation normalization; the author independently verified mathematical expressions, examples, numerical checks, citations, and reproducibility claims, and takes full responsibility for the final version of the article. The author's ORCID is \href{https://orcid.org/0009-0001-1097-1770}{0009-0001-1097-1770}.
+The author acknowledges the use of artificial intelligence (AI) tools for
+linguistic editing, organizational refinement, notation consistency, and
+LaTeX assistance during the preparation of the manuscript. The author independently developed, verified, and assumes full responsibility for all
+mathematical statements, proofs, examples, citations, and computational
+checks presented in the manuscript.
+
 
 \section*{Funding}
 
@@ -642,6 +716,7 @@ The author declares no conflict of interest.
 \section*{Data Availability}
 
 No external datasets were used. The numerical checks and examples are reproducible directly from the displayed recurrences, companion matrices, and finite-field computations; the associated verification code is archived at \url{https://doi.org/10.5281/zenodo.22118430}.
+The archived scripts \texttt{verify-examples.py} and \texttt{verify-theorem-pipeline.py} verify, for the parameter triples displayed in Section~6, the rank of apparition, the multiplier, the matrix period, the half-period identity, and the vanishing of the stated character sums.
  
 
 \bibliographystyle{plain}
