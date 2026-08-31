@@ -1,16 +1,17 @@
-# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
+﻿# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Reproducibility and archival materials for **“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”**
+> Reproducibility and archival materials for **â€œHalf-Period Involutions and Exact Cancellation in Inert Lucas Sequences.â€**
 
 This repository accompanies a focused structural note on Lucas recurrences modulo inert primes. The manuscript studies the half-period scalar involution of the companion matrix and organizes two exact mechanisms that can force cancellation of full-period character sums.
 
-**Majid Ghandali** · Independent Researcher · Tehran, Iran · 2026  
+**Majid Ghandali** Â· Independent Researcher Â· Tehran, Iran Â· 2026  
 [ORCID: 0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
 
 **Release status:** pending first tagged archival release.  
-**Repository DOI:** pending Zenodo archival release.
+**Software DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)  
+**Preprint DOI:** [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
 
 ---
 
@@ -90,7 +91,8 @@ The manuscript studies two exact structural mechanisms:
 | Verification outputs | `results/` |
 | Release metadata | `CITATION.cff`; `.zenodo.json` |
 | License | MIT |
-| Archival DOI | Pending first Zenodo release |
+| Software DOI | [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) |
+| Preprint DOI | [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586) |
 
 ---
 
@@ -396,8 +398,8 @@ graph LR
 
 Two pure-Python verifiers are provided:
 
-1. **`code/verify-examples.py`** — statement-by-statement verification of the two diagnostic examples in the manuscript (both mechanisms).
-2. **`code/verify-theorem-pipeline.py`** — constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
+1. **`code/verify-examples.py`** â€” statement-by-statement verification of the two diagnostic examples in the manuscript (both mechanisms).
+2. **`code/verify-theorem-pipeline.py`** â€” constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
 
 The theorem-pipeline verifier does not replace the mathematical proofs or establish new mathematical results. It explicitly checks both $A^{T/2}=-I$ and $A^T=I$, so that the field-derived order of $\lambda$ is independently confirmed to be the matrix period of $A$.
 
@@ -472,26 +474,26 @@ The compiled preprint PDF is included in the release package.
 
 ```text
 half-period-involutions-in-inert-lucas-sequences/
-│
-├── .gitignore
-├── .zenodo.json
-├── CITATION.cff
-├── LICENSE
-├── README.md
-│
-├── manuscript/
-│   ├── main-p4.tex
-│   ├── main-p4.pdf
-│   └── references.bib
-│
-├── code/
-│   ├── verify-examples.py
-│   └── verify-theorem-pipeline.py
-│
-└── results/
-    ├── example-verification.json
-    ├── theorem-pipeline-verification.csv
-    └── theorem-pipeline-verification.json
+â”‚
+â”œâ”€â”€ .gitignore
+â”œâ”€â”€ .zenodo.json
+â”œâ”€â”€ CITATION.cff
+â”œâ”€â”€ LICENSE
+â”œâ”€â”€ README.md
+â”‚
+â”œâ”€â”€ manuscript/
+â”‚   â”œâ”€â”€ main-p4.tex
+â”‚   â”œâ”€â”€ main-p4.pdf
+â”‚   â””â”€â”€ references.bib
+â”‚
+â”œâ”€â”€ code/
+â”‚   â”œâ”€â”€ verify-examples.py
+â”‚   â””â”€â”€ verify-theorem-pipeline.py
+â”‚
+â””â”€â”€ results/
+    â”œâ”€â”€ example-verification.json
+    â”œâ”€â”€ theorem-pipeline-verification.csv
+    â””â”€â”€ theorem-pipeline-verification.json
 ```
 
 > [!NOTE]
@@ -508,7 +510,7 @@ The Zenodo archive provides the persistent archival record for the tagged releas
 Before the first tagged archival release:
 
 ```text
-Repository DOI: pending
+Software DOI: [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
 ```
 
 After archival:
@@ -559,7 +561,7 @@ Version-specific DOI
 Before the first archival release:
 
 ```text
-Zenodo DOI: pending
+Software DOI: [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430); Preprint DOI: [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
 ```
 
 After the DOI is minted, the release metadata, `CITATION.cff`, `.zenodo.json`, and README should be updated consistently in a subsequent controlled metadata release.
@@ -596,3 +598,4 @@ Independent Researcher, Tehran, Iran
 
 Email: [majid.ghandali@gmail.com](mailto:majid.ghandali@gmail.com)  
 ORCID: [0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
+

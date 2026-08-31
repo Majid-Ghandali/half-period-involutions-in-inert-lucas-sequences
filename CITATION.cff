@@ -1,12 +1,14 @@
-cff-version: 1.2.0
-message: "If you use this repository, please cite the associated manuscript."
+﻿cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying manuscript and the archived reproducibility release."
 title: "Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences"
 type: software
 authors:
   - family-names: Ghandali
     given-names: Majid
-    orcid: https://orcid.org/0009-0001-1097-1770
-version: 1.0.0-preprint
-date-released: 2026-08-19
-repository-code: https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences
+    orcid: "https://orcid.org/0009-0001-1097-1770"
+doi: "10.5281/zenodo.22118430"
+version: "1.0.0-preprint"
+date-released: "2026-08-19"
+url: "https://doi.org/10.5281/zenodo.22118430"
+repository-code: "https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences"
 license: MIT
