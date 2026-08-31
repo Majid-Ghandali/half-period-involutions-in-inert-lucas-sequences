@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+﻿\documentclass[11pt]{article}
 
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
@@ -120,7 +120,7 @@ Throughout, let $P,Q\in\Z$, let $p$ be an odd prime, and put
 \[
  D=P^2-4Q.
 \]
-We place the discussion in the standard Lucas-sequence framework by assuming non-degeneracy over characteristic zero. The finite-field arguments of this note rely only on the local conditions
+Although Lucas sequences are often studied under characteristic-zero non-degeneracy assumptions, no such global assumption is needed for the finite-field arguments below. Throughout we assume only the local conditions
 \[
  p\nmid QD
 \]
@@ -129,8 +129,7 @@ and inertness, and all congruences in what follows are taken modulo $p$.
 We use the following standard terminology.
 
 \begin{definition}
-The Lucas sequence is \emph{non-degenerate} if, for its characteristic roots
-$\lambda$ and $\mu$ in characteristic zero, the quotient $\lambda/\mu$ is not a root of unity. The prime $p$ is called \emph{inert} for the sequence if
+The prime $p$ is called \emph{inert} for the sequence if
 \[
  \chiP(D)=-1;
 \]
@@ -196,7 +195,7 @@ Define
 \[
  T=\ord_{\operatorname{GL}_2(\Fp)}(A).
 \]
-Since $A^T=I$, the sequences $(U_n)_{n\geq0}$ and $(V_n)_{n\geq0}$ are periodic modulo $p$, and $T$ is a common period for both sequences.
+Since $A^T=I$, the sequences $(U_n)_{n\geq0}$ and $(V_n)_{n\geq0}$ are periodic modulo $p$, and $T$ is a common period for both sequences. The minimal periods of the individual sequences may divide $T$.
 
 \begin{proposition}[Order of the eigenvalues]
 \label{prop:eigenvalue-order}
@@ -509,6 +508,8 @@ Therefore,
 Summing first over $j$ and then over $k$ proves \eqref{eq:full-period-factorization}. If $\psi(\Lambda)\neq1$, the first factor is a geometric sum over a complete cycle of $\psi(\Lambda)$ and is zero.
 \end{proof}
 
+Thus the full-period character sum separates into an inner rank-block component and an outer scalar-orbit component. The resulting cancellation may occur entirely in the scalar-orbit direction, independently of any sign-reversing involution on the index set.
+
 \begin{corollary}[Quadratic scalar cancellation]
 \label{cor:quadratic-scalar}
 If
@@ -677,11 +678,11 @@ Together, \cref{ex:fibonacci-7}, \cref{ex:scalar-cancellation}, and this remark 
 \centering
 \begin{tabular}{lccccc}
 \toprule
-& $p$ & $\chiP(-1)$ & $\chiP(\Lambda)$ & Half-period & Scalar \\
+& $p$ & $\chiP(-1)$ & $\chiP(\Lambda)$ & HP quadratic & Scalar \\
 \midrule
-\cref{ex:fibonacci-7} & $7$ & $-1$ & $-1$ & active & active \\
-\cref{ex:scalar-cancellation} & $5$ & $1$ & $-1$ & silent & active \\
-\cref{rem:even-period-not-enough} & $5$ & $1$ & $1$ & silent & silent \\
+\cref{ex:fibonacci-7} & $7$ & $-1$ & $-1$ & yes & yes \\
+\cref{ex:scalar-cancellation} & $5$ & $1$ & $-1$ & no & yes \\
+\cref{rem:even-period-not-enough} & $5$ & $1$ & $1$ & no & no \\
 \bottomrule
 \end{tabular}
 \caption{The three configurations of the two quadratic criteria realized by the
@@ -692,7 +693,7 @@ excluded by \cref{prop:chi-lambda}.}
 
 \section{Scope Remark}
 
-This note does not propose a new rank--period theory. The decomposition into rank blocks follows from the companion-matrix identity, the definition of the rank of apparition, and the divisibility $\alpha\mid n$ whenever $U_n=0\pmod p$, which in the inert setting is an immediate consequence of \cref{lem:rank-characterization}. The structural point is the separation of two exact cancellation criteria as arguments: half-period translation and rank-block scalar propagation, equivalently geometric character factorization. For the quadratic character on a full period these criteria are related as in \cref{prop:chi-lambda}, but they remain distinct as proofs.
+The purpose of this note is to isolate cancellation mechanisms rather than to modify the classical rank--period theory. The rank--period structure supplies the algebraic scaffolding, while the contribution here is the explicit separation of translation cancellation from scalar character filtering. The decomposition into rank blocks follows from the companion-matrix identity, the definition of the rank of apparition, and the divisibility $\alpha\mid n$ whenever $U_n=0\pmod p$, which in the inert setting is an immediate consequence of \cref{lem:rank-characterization}. The structural point is the separation of two exact cancellation criteria as arguments: half-period translation and rank-block scalar propagation, equivalently geometric character factorization. For the quadratic character on a full period these criteria are related as in \cref{prop:chi-lambda}, but they remain distinct as proofs.
 
 The hypotheses are essential. If $p\mid Q$, the companion matrix need not be invertible. If $p\mid D$, the characteristic polynomial is not separable in the required form. In either situation, the inert quadratic-extension argument used here does not apply without modification. Outside the inert setting considered here, an even matrix period alone does not in general imply that the half-period matrix is $-I$; within the inert setting, $T$ is even if and only if $A^{T/2}=-I$, by \cref{prop:half-period-criterion}.
 
