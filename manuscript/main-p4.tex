@@ -1,4 +1,4 @@
-﻿\documentclass[11pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
@@ -127,15 +127,7 @@ approach complements the period--entry-point viewpoint by exploiting
 multiplicative-order information available in the inert quadratic-extension
 framework.
 
-The contribution of the note can be summarized as follows. We formulate two exact
-cancellation criteria for complete-period character sums in the inert Lucas setting
---- an index-translation criterion induced by the half-period involution
-$A^{T/2}=-I$, and a rank-block scalar criterion induced by $A^\alpha=\Lambda I$
---- and we prove that, for the quadratic character over a full matrix period, the
-former implies the latter, while the converse fails as a cancellation argument when
-$\chiP(-1)=1$ (\cref{prop:chi-lambda}, \cref{ex:scalar-cancellation}). The
-mechanisms themselves are elementary; the point is their precise separation and the
-resulting hierarchy.
+The contribution of this note is the precise separation of two logically distinct cancellation mechanisms for character sums in the inert Lucas setting. The first is an index-translation mechanism induced by the half-period involution $A^{T/2}=-I$. The second is a scalar rank-block mechanism induced by $A^\alpha=\Lambda I$, leading to a geometric character factor. We show that, for quadratic characters over a full matrix period, the former criterion implies the latter, whereas the converse may fail as a cancellation proof when $\chi_p(-1)=1$. This distinction is made explicit through the finite-field multiplier $\Lambda$ and through concrete examples.
 
 \section{Setup}
 
@@ -143,13 +135,11 @@ Throughout, let $P,Q\in\Z$, let $p$ be an odd prime, and put
 \[
  D=P^2-4Q.
 \]
-Although Lucas sequences are often studied under characteristic-zero non-degeneracy assumptions, no such global assumption is needed for the finite-field arguments below. Throughout we assume only the local conditions
+Although Lucas sequences are often studied under characteristic-zero non-degeneracy assumptions, the finite-field arguments of this note require only the local conditions
 \[
- p\nmid QD
+p\nmid QD
 \]
-and $\chiP(D)=-1$, and all congruences in what follows are taken modulo $p$.
-
-We use the following standard terminology.
+and inertness. We use the following standard terminology.
 
 \begin{definition}
 The prime $p$ is called \emph{inert} for the sequence if
@@ -574,6 +564,15 @@ Conversely, suppose $\chiP(\Lambda)=-1$. If $\omega$ were odd, then $\Lambda=(\L
 The final assertion follows: on a full period, \cref{cor:quadratic-half-period} requires $T$ even and $\chiP(-1)=-1$, that is, $p\equiv3\pmod4$, and then $\chiP(\Lambda)=-1$ by (b), so \cref{cor:quadratic-scalar} applies.
 \end{proof}
 
+\begin{corollary}[Quadratic full-period configurations]
+In the inert setting, for quadratic-character sums over a full matrix period, the half-period quadratic cancellation criterion implies the rank-block scalar cancellation criterion. The reverse implication need not hold. Consequently, among the four formal configurations of the two criteria, the configuration in which half-period quadratic cancellation holds but scalar cancellation fails is impossible.
+\end{corollary}
+
+\begin{proof}
+For a full period, the half-period quadratic criterion requires $T$ even and $\chi_p(-1)=-1$, equivalently $p\equiv 3\pmod 4$. Proposition 5.7 then gives $\chi_p(\Lambda)=-1$, so Corollary 5.6 applies. The failure of the reverse implication is shown by Example 6.2, where $\chi_p(\Lambda)=-1$ but $\chi_p(-1)=1$.
+\end{proof}
+
+
 \begin{remark}[Two mechanisms and their relation]
 \label{rem:two-mechanisms}
 The cancellation in \cref{cor:quadratic-half-period} is a translation pairing:
@@ -693,22 +692,19 @@ Together, \cref{ex:fibonacci-7}, \cref{ex:scalar-cancellation}, and this remark 
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{lcccccc}
-\toprule
-& $p$ & $T$ even? & $\chiP(-1)$ & $\chiP(\Lambda)$ & HP quadratic & Scalar \\
-\midrule
-\cref{ex:fibonacci-7} & $7$ & yes & $-1$ & $-1$ & yes & yes \\
-\cref{ex:scalar-cancellation} & $5$ & yes & $1$ & $-1$ & no & yes \\
-\cref{rem:even-period-not-enough} & $5$ & yes & $1$ & $1$ & no & no \\
-\bottomrule
+\small
+\begin{tabular}{c c c c c c c c}
+\hline
+Case & $(P,Q,p)$ & $T$ even? & $\chi_p(-1)$ & $\chi_p(\Lambda)$ & $HP$ quadratic & Scalar & Active criteria \\
+\hline
+Example 6.1 & $(1,-1,7)$ & yes & $-1$ & $-1$ & yes & yes & both \\
+Example 6.2 & $(1,2,5)$ & yes & $1$ & $-1$ & no & yes & scalar only \\
+Remark 6.3  & $(1,1,5)$ & yes & $1$ & $1$ & no & no & neither \\
+\hline
 \end{tabular}
-\caption{The three configurations of the two quadratic criteria realized by the
-examples. The column ``HP quadratic'' refers to the quadratic cancellation criterion of
-\cref{cor:quadratic-half-period}, not merely to the existence of $A^{T/2}=-I$. The fourth
-formal configuration (half-period quadratic criterion active, scalar criterion inactive)
-is excluded by \cref{prop:chi-lambda}.}
-\label{tab:configurations}
+\caption{The three attainable configurations represented in the examples. The fourth formal configuration, half-period quadratic cancellation without scalar cancellation, is excluded by the quadratic full-period configuration result above.}
 \end{table}
+
 
 \section{Scope Remark}
 
