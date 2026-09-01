@@ -1,16 +1,13 @@
-<<<<<<< HEAD
-﻿**Release status:** dual Zenodo DOIs minted; revised preprint on branch `revise/preprint-v1.1`.
-=======
-# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
+﻿# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
 
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22118430.svg)](https://doi.org/10.5281/zenodo.22118430)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12.7-blue.svg)](https://www.python.org/downloads/release/python-3127/)
 [![GitHub Release Date](https://img.shields.io/github/release-date/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences)](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases)
 > **Reproducibility and archival materials for**  
-> *“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”*
+> *ΓÇ£Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.ΓÇ¥*
 > 
-> **Majid Ghandali** · Independent Researcher · 2026  
+> **Majid Ghandali** ┬╖ Independent Researcher ┬╖ 2026  
 > **Current reproducibility release:** [`v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 > **Citable archival DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
 
@@ -20,7 +17,7 @@
 
 This repository provides the manuscript source, compiled preprint, diagnostic
 computational verification, and archival metadata associated with the paper
-**“Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.”**
+**ΓÇ£Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.ΓÇ¥**
 
 The manuscript studies Lucas recurrences modulo inert primes, with particular
 attention to the half-period scalar involution of the companion matrix and two
@@ -406,8 +403,8 @@ graph LR
 
 Two pure-Python verifiers are provided:
 
-1. **`code/verify-examples.py`** — statement-by-statement verification of the two diagnostic examples in the manuscript (both mechanisms).
-2. **`code/verify-theorem-pipeline.py`** — constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
+1. **`code/verify-examples.py`** ΓÇö statement-by-statement verification of the two diagnostic examples in the manuscript (both mechanisms).
+2. **`code/verify-theorem-pipeline.py`** ΓÇö constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
 
 The theorem-pipeline verifier does not replace the mathematical proofs or establish new mathematical results. It explicitly checks both $A^{T/2}\equiv -I\pmod p$ and $A^T\equiv I\pmod p$, so that the field-derived order of $\lambda$ is independently confirmed to be the matrix period of $A$.
 
@@ -482,26 +479,26 @@ The compiled preprint PDF is included in the release package.
 
 ```text
 half-period-involutions-in-inert-lucas-sequences/
-│
-├── .gitignore
-├── .zenodo.json
-├── CITATION.cff
-├── LICENSE
-├── README.md
-│
-├── manuscript/
-│   ├── main-p4.tex
-│   ├── main-p4.pdf
-│   └── references.bib
-│
-├── code/
-│   ├── verify-examples.py
-│   └── verify-theorem-pipeline.py
-│
-└── results/
-    ├── example-verification.json
-    ├── theorem-pipeline-verification.csv
-    └── theorem-pipeline-verification.json
+Γöé
+Γö£ΓöÇΓöÇ .gitignore
+Γö£ΓöÇΓöÇ .zenodo.json
+Γö£ΓöÇΓöÇ CITATION.cff
+Γö£ΓöÇΓöÇ LICENSE
+Γö£ΓöÇΓöÇ README.md
+Γöé
+Γö£ΓöÇΓöÇ manuscript/
+Γöé   Γö£ΓöÇΓöÇ main-p4.tex
+Γöé   Γö£ΓöÇΓöÇ main-p4.pdf
+Γöé   ΓööΓöÇΓöÇ references.bib
+Γöé
+Γö£ΓöÇΓöÇ code/
+Γöé   Γö£ΓöÇΓöÇ verify-examples.py
+Γöé   ΓööΓöÇΓöÇ verify-theorem-pipeline.py
+Γöé
+ΓööΓöÇΓöÇ results/
+    Γö£ΓöÇΓöÇ example-verification.json
+    Γö£ΓöÇΓöÇ theorem-pipeline-verification.csv
+    ΓööΓöÇΓöÇ theorem-pipeline-verification.json
 ```
 
 > [!NOTE]
@@ -522,7 +519,7 @@ The Zenodo DOI identifies a fixed archived release. For reproducibility and cita
 
 The GitHub release page is available at:
 
-➡️ [GitHub Release: v1.0.0-preprint](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
+Γ₧í∩╕Å [GitHub Release: v1.0.0-preprint](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 
 ---
 
@@ -535,7 +532,7 @@ If this repository contributes to your research, please cite:
 
 Citation metadata is available in:
 
-➡️ [`CITATION.cff`](CITATION.cff)
+Γ₧í∩╕Å [`CITATION.cff`](CITATION.cff)
 
 ### Reproducibility archive
 
@@ -576,4 +573,4 @@ Independent Researcher, Tehran, Iran
 
 Email: [majid.ghandali@gmail.com](mailto:majid.ghandali@gmail.com)  
 ORCID: [0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
->>>>>>> origin/main
+
