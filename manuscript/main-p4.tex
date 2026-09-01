@@ -94,17 +94,38 @@ For an odd prime $p$, we study complete-period sums of the form
 \]
 where $\chiP$ is the quadratic character of $\Fp$, extended by $\chiP(0)=0$.
 
-Periodicity, ranks of apparition, and character sums for Lucas sequences have a substantial classical and modern literature; see, among others, \cite{Lucas1878,Lehmer1930,Williams,Everest2003,BHV2001,Stewart2013,Wall1960,Robinson1963,Vinson1963,Renault1996,Renault2013,Somer1980,GuptaRockstrohSu2012,FiebigMbirikaSpilker2025,BlackburnShparlinski2006,Sanna2022,Sanna2024,LN}. The purpose of this concise note is structural. We separate two cancellation arguments that are often used in different forms. One is a half-period involution of the companion matrix. The other is rank-block scalar propagation, or equivalently geometric character factorization, arising from the scalar multiplier of each rank block. The determinant/norm relation is kept separate as an independent observation about the matrix period. The distinction matters, especially when $\chiP(-1)=1$ but $\chiP(\Lambda)=-1$. Among recent contributions, Fiebig, Mbirika, and Spilker
-\cite{FiebigMbirikaSpilker2025} develop a period--entry-point framework
-for Lucas sequences modulo $m$, including structural relations among
-periods, entry points, and associated orders. The present work considers
-a more specialized inert-prime setting, where the companion matrix admits
-a quadratic-extension interpretation. In this setting, the multiplier
+The arithmetic of Lucas sequences goes back to Lucas and Lehmer
+\cite{Lucas1878,Lehmer1930}; for historical and general accounts, see
+\cite{Williams,Everest2003}. Periods modulo $m$, ranks of apparition or
+entry points, and associated order phenomena for Fibonacci and Lucas-type
+recurrences are treated in the classical works
+\cite{Wall1960,Robinson1963,Vinson1963,Somer1980} and in later developments
+\cite{Renault1996,Renault2013,FiebigMbirikaSpilker2025}. Divisibility and
+rank/index questions for Lucas and Lehmer sequences form a broader related
+literature \cite{BHV2001,Stewart2013,Sanna2022,Sanna2024}. The finite-field
+background used below is standard \cite{LN}; for a splitting-field
+perspective on Fibonacci periods modulo primes, see
+\cite{GuptaRockstrohSu2012}. Character sums for recurrence sequences form
+another related strand; see, for example, \cite{BlackburnShparlinski2006}.
+
+The purpose of this concise note is structural. We separate two cancellation
+arguments that are often used in different forms. One is a half-period
+involution of the companion matrix. The other is rank-block scalar
+propagation, or equivalently geometric character factorization, arising from
+the scalar multiplier of each rank block. The determinant/norm relation is
+kept separate as an independent observation about the matrix period. The
+distinction matters, especially when $\chiP(-1)=1$ but $\chiP(\Lambda)=-1$.
+Among recent contributions, Fiebig, Mbirika, and Spilker
+\cite{FiebigMbirikaSpilker2025} develop a period--entry-point framework for
+Lucas sequences modulo $m$, including structural relations among periods,
+entry points, and associated orders. The present work considers a more
+specialized inert-prime setting, where the companion matrix admits a
+quadratic-extension interpretation. In this setting, the multiplier
 associated with the rank of apparition provides an additional scalar
-structure that leads to exact character-sum factorization. Thus, the
-present approach complements the period--entry-point viewpoint by
-exploiting multiplicative-order information available in the inert
-quadratic-extension framework.
+structure that leads to exact character-sum factorization. Thus, the present
+approach complements the period--entry-point viewpoint by exploiting
+multiplicative-order information available in the inert quadratic-extension
+framework.
 
 The contribution of the note can be summarized as follows. We formulate two exact
 cancellation criteria for complete-period character sums in the inert Lucas setting
@@ -126,7 +147,7 @@ Although Lucas sequences are often studied under characteristic-zero non-degener
 \[
  p\nmid QD
 \]
-and inertness, and all congruences in what follows are taken modulo $p$.
+and $\chiP(D)=-1$, and all congruences in what follows are taken modulo $p$.
 
 We use the following standard terminology.
 
@@ -189,7 +210,7 @@ For $n\geq1$,
  \end{pmatrix}.
  \label{eq:matrix-power}
 \end{equation}
-In particular, the lower-left entry of $A^n$ is $U_n$. This companion-matrix viewpoint is classical; for the Fibonacci matrix modulo $m$, see \cite{Robinson1963}.
+In particular, the lower-left entry of $A^n$ is $U_n$. This companion-matrix viewpoint is classical; for matrix and period/rank approaches to Fibonacci and related recurrences modulo $m$, see \cite{Robinson1963,Wall1960,Vinson1963,Renault2013}.
 
 \section{Matrix Period}
 
@@ -336,7 +357,7 @@ be the rank of apparition of $p$, and define
 \[
  \Lambda=U_{\alpha+1}\pmod p.
 \]
-In the inert setting the set above is nonempty, so $\alpha$ is well defined: \cref{lem:rank-characterization} below identifies $\alpha$ with the order of $\lambda/\mu\in\Fpq^\times$. (For the existence of ranks of apparition in greater generality, see \cite{Desmond1978}.)
+In the inert setting the set above is nonempty, so $\alpha$ is well defined: \cref{lem:rank-characterization} below identifies $\alpha$ with the order of $\lambda/\mu\in\Fpq^\times$. (For ranks of apparition in broader Lucas-sequence settings, see \cite{Desmond1978,Somer1980,Sanna2022,Sanna2024}.)
 
 \begin{lemma}[Rank characterization]
 \label{lem:rank-characterization}
@@ -443,30 +464,24 @@ which gives the formula for $U_{k\alpha+j}$ by comparison of lower-left entries,
 
 \begin{remark}[Classical context]
 \label{rem:classical-context}
-
-The identity $A^\alpha=\Lambda I$ and the decomposition
-\eqref{eq:period-decomposition} represent the inert-case realization of
-classical relationships among periods, ranks of apparition, and multiplier
-orders for Fibonacci and Lucas sequences
-\cite{Robinson1963,Vinson1963,Wall1960,Renault1996,Renault2013}.
-The divisibility $\alpha\mid p+1$ in
-\cref{cor:alpha-divides-p-plus-1} is classical as well
-\cite{Lucas1878,Wall1960,GuptaRockstrohSu2012}.
+The identities in \cref{prop:rank-multiplier} should be viewed as the inert-prime
+specialization of classical period--rank--order relations for Fibonacci and
+Lucas-type sequences; compare
+\cite{Wall1960,Robinson1963,Vinson1963,Somer1980,Renault1996,Renault2013,FiebigMbirikaSpilker2025}.
+We include the proof to fix the notation $\alpha,\Lambda,\omega$ and to make the
+subsequent character-factorization argument self-contained. The divisibility
+$\alpha\mid p+1$ in \cref{cor:alpha-divides-p-plus-1} is classical in the nonsplit
+prime setting as well \cite{Lucas1878,Wall1960,GuptaRockstrohSu2012}.
 Taking determinants in $A^\alpha=\Lambda I$ further gives
 \[
 \Lambda^2=Q^\alpha,
 \]
 which connects the rank multiplier with the determinant/norm relation of
 \cref{rem:determinant-norm}.
-
-The period--entry-point framework developed by Fiebig, Mbirika, and Spilker
-\cite{FiebigMbirikaSpilker2025} provides a complementary description of
-period, entry-point, and order phenomena for Lucas sequences modulo $m$.
 In the present inert prime setting, the multiplier admits an explicit
 finite-field interpretation through the characteristic root, and its
 multiplicative order gives the scalar decomposition underlying the rank-block
 character factorization developed below.
-
 \end{remark}
 
 \begin{proposition}[Full-period character factorization]
@@ -678,24 +693,26 @@ Together, \cref{ex:fibonacci-7}, \cref{ex:scalar-cancellation}, and this remark 
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{lccccc}
+\begin{tabular}{lcccccc}
 \toprule
-& $p$ & $\chiP(-1)$ & $\chiP(\Lambda)$ & HP quadratic & Scalar \\
+& $p$ & $T$ even? & $\chiP(-1)$ & $\chiP(\Lambda)$ & HP quadratic & Scalar \\
 \midrule
-\cref{ex:fibonacci-7} & $7$ & $-1$ & $-1$ & yes & yes \\
-\cref{ex:scalar-cancellation} & $5$ & $1$ & $-1$ & no & yes \\
-\cref{rem:even-period-not-enough} & $5$ & $1$ & $1$ & no & no \\
+\cref{ex:fibonacci-7} & $7$ & yes & $-1$ & $-1$ & yes & yes \\
+\cref{ex:scalar-cancellation} & $5$ & yes & $1$ & $-1$ & no & yes \\
+\cref{rem:even-period-not-enough} & $5$ & yes & $1$ & $1$ & no & no \\
 \bottomrule
 \end{tabular}
 \caption{The three configurations of the two quadratic criteria realized by the
-examples. The fourth formal configuration (half-period active, scalar silent) is
-excluded by \cref{prop:chi-lambda}.}
+examples. The column ``HP quadratic'' refers to the quadratic cancellation criterion of
+\cref{cor:quadratic-half-period}, not merely to the existence of $A^{T/2}=-I$. The fourth
+formal configuration (half-period quadratic criterion active, scalar criterion inactive)
+is excluded by \cref{prop:chi-lambda}.}
 \label{tab:configurations}
 \end{table}
 
 \section{Scope Remark}
 
-The purpose of this note is to isolate cancellation mechanisms rather than to modify the classical rank--period theory. The rank--period structure supplies the algebraic scaffolding, while the contribution here is the explicit separation of translation cancellation from scalar character filtering. The decomposition into rank blocks follows from the companion-matrix identity, the definition of the rank of apparition, and the divisibility $\alpha\mid n$ whenever $U_n=0\pmod p$, which in the inert setting is an immediate consequence of \cref{lem:rank-characterization}. The structural point is the separation of two exact cancellation criteria as arguments: half-period translation and rank-block scalar propagation, equivalently geometric character factorization. For the quadratic character on a full period these criteria are related as in \cref{prop:chi-lambda}, but they remain distinct as proofs.
+The purpose of this note is to isolate cancellation mechanisms rather than to modify the classical rank--period theory. The rank--period structure supplies the algebraic scaffolding, while the contribution here is the explicit separation of translation cancellation from scalar character filtering. The decomposition into rank blocks follows from the companion-matrix identity, the definition of the rank of apparition, and the divisibility $\alpha\mid n$ whenever $U_n=0\pmod p$, which in the inert setting is an immediate consequence of \cref{lem:rank-characterization}. For the quadratic character on a full period these criteria are related as in \cref{prop:chi-lambda}, but they remain distinct as proofs.
 
 The hypotheses are essential. If $p\mid Q$, the companion matrix need not be invertible. If $p\mid D$, the characteristic polynomial is not separable in the required form. In either situation, the inert quadratic-extension argument used here does not apply without modification. Outside the inert setting considered here, an even matrix period alone does not in general imply that the half-period matrix is $-I$; within the inert setting, $T$ is even if and only if $A^{T/2}=-I$, by \cref{prop:half-period-criterion}.
 
