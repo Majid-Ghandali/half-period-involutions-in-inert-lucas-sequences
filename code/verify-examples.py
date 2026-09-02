@@ -239,6 +239,71 @@ def verify_inert_scalar_mod_5() -> dict[str, Any]:
 
 
 # ============================================================================
+
+
+# ============================================================================
+# Remark ? Even period alone is not enough  (P,Q,p)=(1,1,5)
+# ============================================================================
+
+def verify_even_period_not_enough_mod_5() -> dict[str, Any]:
+    """Remark 6.3: T even and A^{T/2}=-I do not force quadratic cancellation."""
+    P, Q, p = 1, 1, 5
+    if not is_odd_prime(p):
+        raise ValueError(f"p must be an odd prime, got {p}")
+
+    D = (P * P - 4 * Q) % p
+    A: Matrix = ((P % p, (-Q) % p), (1, 0))
+
+    U, V = lucas(P, Q, p, 12)
+
+    assert D == 2
+    assert chi(D, p) == -1
+
+    alpha = next(n for n in range(1, len(U)) if U[n] == 0)
+    assert alpha == 3
+    Lambda = U[alpha + 1]
+    assert Lambda == (p - 1) % p
+
+    omega = 1
+    pow_L = Lambda
+    while pow_L != 1:
+        pow_L = (pow_L * Lambda) % p
+        omega += 1
+        if omega > p:
+            raise RuntimeError("order computation failed")
+    assert omega == 2
+
+    T = alpha * omega
+    assert T == 6
+    assert matrix_order(A, p) == T
+
+    half = T // 2
+    assert mat_pow(A, half, p) == ((p - 1, 0), (0, p - 1))
+    assert mat_pow(A, T, p) == ((1, 0), (0, 1))
+
+    assert chi(-1, p) == 1
+    assert chi(Lambda, p) == 1
+
+    S_U = sum(chi(U[n], p) for n in range(1, T + 1))
+    assert S_U == 4
+
+    return {
+        "name": "Even period alone is not enough",
+        "label": "rem:even-period-not-enough",
+        "parameters": {"P": P, "Q": Q, "p": p, "D": D},
+        "alpha": alpha,
+        "Lambda": Lambda,
+        "omega": omega,
+        "T": T,
+        "A_half_equals_minus_I": True,
+        "chi_minus_1": chi(-1, p),
+        "chi_Lambda": chi(Lambda, p),
+        "both_criteria_inactive": True,
+        "character_sum_U": S_U,
+        "character_sum_does_not_vanish": True,
+        "status": "PASS",
+    }
+
 # Pretty-printing
 # ============================================================================
 
@@ -268,7 +333,7 @@ def print_example(ex: dict[str, Any]) -> None:
         print("⇒  quadratic-character values cancel under the half-period translation")
         print(f"    Σ χ(U_n) = {ex['character_sum_U']},   Σ χ(V_n) = {ex['character_sum_V']}")
 
-    else:
+    elif ex["label"] == "ex:scalar-cancellation":
         print(f"(P,Q,p) = ({ex['parameters']['P']}, {ex['parameters']['Q']}, {ex['parameters']['p']})")
         print(f"D ≡ {ex['parameters']['D']} (mod 5)  (nonsquare)  →  X²−X+2 irreducible over F_5")
         print()
@@ -294,6 +359,13 @@ def print_example(ex: dict[str, Any]) -> None:
         print(f"    Σ χ(V_n) = {ex['full_character_sum_V']}")
         print("⇒  scalar character filtering, not a negation pairing")
 
+
+    elif ex["label"] == "rem:even-period-not-enough":
+        print(f"(P,Q,p) = ({ex['parameters']['P']}, {ex['parameters']['Q']}, {ex['parameters']['p']})")
+        print(f"D = {ex['parameters']['D']} (mod 5)")
+        print(f"alpha={ex['alpha']}, Lambda={ex['Lambda']}, omega={ex['omega']}, T={ex['T']}")
+        print(f"chi(-1)={ex['chi_minus_1']}, chi(Lambda)={ex['chi_Lambda']}")
+        print(f"sum chi(U)={ex['character_sum_U']} != 0")
     print()
     print(f">>> STATUS: {ex['status']}")
     print("═"*78)
@@ -322,6 +394,7 @@ def main() -> None:
     examples = [
         verify_fibonacci_mod_7(),
         verify_inert_scalar_mod_5(),
+        verify_even_period_not_enough_mod_5(),
     ]
 
     for ex in examples:

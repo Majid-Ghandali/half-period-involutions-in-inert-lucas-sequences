@@ -67,6 +67,27 @@
       "full_character_sum_V": 0,
       "full_character_sums_vanish": true,
       "status": "PASS"
+    },
+    {
+      "name": "Even period alone is not enough",
+      "label": "rem:even-period-not-enough",
+      "parameters": {
+        "P": 1,
+        "Q": 1,
+        "p": 5,
+        "D": 2
+      },
+      "alpha": 3,
+      "Lambda": 4,
+      "omega": 2,
+      "T": 6,
+      "A_half_equals_minus_I": true,
+      "chi_minus_1": 1,
+      "chi_Lambda": 1,
+      "both_criteria_inactive": true,
+      "character_sum_U": 4,
+      "character_sum_does_not_vanish": true,
+      "status": "PASS"
     }
   ],
   "overall_status": "PASS"
