@@ -1,4 +1,4 @@
-﻿cff-version: 1.2.0
+cff-version: 1.2.0
 message: "If you use this repository, please cite the accompanying manuscript and the archived reproducibility release."
 title: "Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences"
 type: software
