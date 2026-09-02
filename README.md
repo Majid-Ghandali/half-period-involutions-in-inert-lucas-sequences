@@ -1,4 +1,4 @@
-﻿# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
+# Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
 
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22118430.svg)](https://doi.org/10.5281/zenodo.22118430)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -9,7 +9,8 @@
 > 
 > **Majid Ghandali** ┬╖ Independent Researcher ┬╖ 2026  
 > **Current reproducibility release:** [`v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
-> **Citable archival DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
+> **Software DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
+> **Preprint DOI:** [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
 
 ---
 
