@@ -5,9 +5,9 @@
 [![Python](https://img.shields.io/badge/Python-3.12.7-blue.svg)](https://www.python.org/downloads/release/python-3127/)
 [![GitHub Release Date](https://img.shields.io/github/release-date/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences)](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases)
 > **Reproducibility and archival materials for**  
-> *ΓÇ£Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.ΓÇ¥*
+> *"Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences."*
 > 
-> **Majid Ghandali** ┬╖ Independent Researcher ┬╖ 2026  
+> **Majid Ghandali**  |  Independent Researcher  |  2026  
 > **Current reproducibility release:** [`v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 > **Software DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
 > **Preprint DOI:** [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
@@ -18,7 +18,7 @@
 
 This repository provides the manuscript source, compiled preprint, diagnostic
 computational verification, and archival metadata associated with the paper
-**ΓÇ£Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences.ΓÇ¥**
+**"Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences."**
 
 The manuscript studies Lucas recurrences modulo inert primes, with particular
 attention to the half-period scalar involution of the companion matrix and two
@@ -293,12 +293,13 @@ character sum.
 
 ## Diagnostic Examples
 
-The repository includes exact-arithmetic verification of diagnostic examples from the manuscript.
+The repository includes exact-arithmetic verification of three diagnostic cases from Section 6 of the manuscript (Examples 6.1-6.2 and Remark 6.3).
 
-| Example | Parameters | Structural role |
+| Case | Parameters | Structural role |
 | :-- | :-- | :-- |
-| Fibonacci modulo $7$ | $(P=1,\ Q=-1,\ p=7)$ | Half-period quadratic cancellation |
-| Scalar example modulo $5$ | $(P=1,\ Q=2,\ p=5)$ | Rank-block scalar cancellation with $\chi_p(-1)=1$ |
+| Example 6.1 (Fibonacci mod $7$) | $(P=1,\ Q=-1,\ p=7)$ | Both criteria active (half-period quadratic + scalar) |
+| Example 6.2 (scalar mod $5$) | $(P=1,\ Q=2,\ p=5)$ | Scalar active only ($\chi_p(-1)=1$) |
+| Remark 6.3 (even period) | $(P=1,\ Q=1,\ p=5)$ | Neither criterion active; sum does not vanish |
 
 For
 
@@ -404,8 +405,8 @@ graph LR
 
 Two pure-Python verifiers are provided:
 
-1. **`code/verify-examples.py`** ΓÇö statement-by-statement verification of the two diagnostic examples in the manuscript (both mechanisms).
-2. **`code/verify-theorem-pipeline.py`** ΓÇö constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
+1. **`code/verify-examples.py`** - statement-by-statement verification of three diagnostic cases in the manuscript (Examples 6.1-6.2 and Remark 6.3).
+2. **`code/verify-theorem-pipeline.py`** - constructive finite verification path for the specialized branch $Q\equiv -1\pmod{p}$ (Mechanism 1 only).
 
 The theorem-pipeline verifier does not replace the mathematical proofs or establish new mathematical results. It explicitly checks both $A^{T/2}\equiv -I\pmod p$ and $A^T\equiv I\pmod p$, so that the field-derived order of $\lambda$ is independently confirmed to be the matrix period of $A$.
 
@@ -480,26 +481,25 @@ The compiled preprint PDF is included in the release package.
 
 ```text
 half-period-involutions-in-inert-lucas-sequences/
-Γöé
-Γö£ΓöÇΓöÇ .gitignore
-Γö£ΓöÇΓöÇ .zenodo.json
-Γö£ΓöÇΓöÇ CITATION.cff
-Γö£ΓöÇΓöÇ LICENSE
-Γö£ΓöÇΓöÇ README.md
-Γöé
-Γö£ΓöÇΓöÇ manuscript/
-Γöé   Γö£ΓöÇΓöÇ main-p4.tex
-Γöé   Γö£ΓöÇΓöÇ main-p4.pdf
-Γöé   ΓööΓöÇΓöÇ references.bib
-Γöé
-Γö£ΓöÇΓöÇ code/
-Γöé   Γö£ΓöÇΓöÇ verify-examples.py
-Γöé   ΓööΓöÇΓöÇ verify-theorem-pipeline.py
-Γöé
-ΓööΓöÇΓöÇ results/
-    Γö£ΓöÇΓöÇ example-verification.json
-    Γö£ΓöÇΓöÇ theorem-pipeline-verification.csv
-    ΓööΓöÇΓöÇ theorem-pipeline-verification.json
+|-- .gitignore
+|-- .zenodo.json
+|-- CITATION.cff
+|-- LICENSE
+|-- README.md
+|
+|-- manuscript/
+|   |-- main-p4.tex
+|   |-- main-p4.pdf
+|   `-- references.bib
+|
+|-- code/
+|   |-- verify-examples.py
+|   `-- verify-theorem-pipeline.py
+|
+`-- results/
+    |-- example-verification.json
+    |-- theorem-pipeline-verification.csv
+    `-- theorem-pipeline-verification.json
 ```
 
 > [!NOTE]
@@ -520,7 +520,7 @@ The Zenodo DOI identifies a fixed archived release. For reproducibility and cita
 
 The GitHub release page is available at:
 
-Γ₧í∩╕Å [GitHub Release: v1.0.0-preprint](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
+-> [GitHub Release: v1.0.0-preprint](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 
 ---
 
@@ -533,7 +533,7 @@ If this repository contributes to your research, please cite:
 
 Citation metadata is available in:
 
-Γ₧í∩╕Å [`CITATION.cff`](CITATION.cff)
+-> [`CITATION.cff`](CITATION.cff)
 
 ### Reproducibility archive
 

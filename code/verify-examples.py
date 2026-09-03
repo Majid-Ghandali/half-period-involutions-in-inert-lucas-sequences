@@ -1,12 +1,12 @@
 # verify-examples.py
 """
-Exact-arithmetic verification of the two diagnostic examples appearing in:
+Exact-arithmetic verification of three diagnostic cases appearing in:
 
     Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
     Majid Ghandali, 2026
 
-This script verifies, statement by statement, the two examples given in
-Section "Examples" of the manuscript. It uses only the Python standard
+This script verifies, statement by statement, three diagnostic cases from
+Section "Examples" of the manuscript (Examples 6.1-6.2 and Remark 6.3). It uses only the Python standard
 library and exact modular arithmetic.
 
 Output
@@ -387,7 +387,7 @@ def main() -> None:
         )
 
     print("="*78)
-    print("VERIFICATION OF THE TWO EXAMPLES FROM THE MANUSCRIPT")
+    print("VERIFICATION OF THREE DIAGNOSTIC CASES FROM THE MANUSCRIPT")
     print("Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences")
     print("="*78)
 
@@ -402,7 +402,7 @@ def main() -> None:
 
     report = {
         "artifact": "verify-examples.py",
-        "purpose": "Statement-by-statement verification of the two examples in Section Examples",
+        "purpose": "Statement-by-statement verification of three diagnostic cases (Examples 6.1-6.2 and Remark 6.3)",
         "examples": examples,
         "overall_status": "PASS",
     }
