@@ -1,24 +1,31 @@
 {
-  "title": "Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences",
-  "description": "Preprint and reproducibility materials for a focused structural note on inert Lucas recurrences, half-period involutions, rank-block scalar propagation, and exact cancellation mechanisms.",
-  "upload_type": "software",
-  "publication_date": "2026-08-19",
-  "creators": [
-    {
-      "name": "Ghandali, Majid",
-      "affiliation": "Independent Researcher, Tehran, Iran",
-      "orcid": "0009-0001-1097-1770"
-    }
-  ],
-  "keywords": [
-    "Lucas sequences",
-    "inert primes",
-    "matrix period",
-    "rank of apparition",
-    "rank multiplier",
-    "character sums",
-    "quadratic character"
-  ],
-  "license": "MIT",
-  "version": "1.0.0-preprint"
+    "title":  "Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences",
+    "description":  "Preprint and reproducibility materials for a focused structural note on inert Lucas recurrences, half-period involutions, rank-block scalar propagation, and exact cancellation mechanisms.",
+    "upload_type":  "software",
+    "publication_date":  "2026-08-19",
+    "creators":  [
+                     {
+                         "name":  "Ghandali, Majid",
+                         "affiliation":  "Independent Researcher, Tehran, Iran",
+                         "orcid":  "0009-0001-1097-1770"
+                     }
+                 ],
+    "keywords":  [
+                     "Lucas sequences",
+                     "inert primes",
+                     "matrix period",
+                     "rank of apparition",
+                     "rank multiplier",
+                     "character sums",
+                     "quadratic character"
+                 ],
+    "license":  "MIT",
+    "version":  "1.0.0-preprint",
+    "related_identifiers":  [
+                                {
+                                    "identifier":  "10.5281/zenodo.22149586",
+                                    "relation":  "isSupplementTo",
+                                    "resource_type":  "publication-preprint"
+                                }
+                            ]
 }
