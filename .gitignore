@@ -20,18 +20,6 @@ evidence-archive/
 _local_evidence/
 *.sage
 README.md.working-backup
-# Local manuscript tooling / editor (not part of public release)
-manuscript/.vscode/
-manuscript/reference_check_output/
-manuscript/*.ps1
-manuscript/*.aux
-manuscript/*.log
-manuscript/*.out
-manuscript/*.toc
-manuscript/*.bbl
-manuscript/*.blg
-manuscript/*.synctex.gz
-verify-theorem-pipeline.sage
 
 # Local manuscript tooling / editor (not part of public release)
 manuscript/.vscode/
@@ -44,5 +32,4 @@ manuscript/*.toc
 manuscript/*.bbl
 manuscript/*.blg
 manuscript/*.synctex.gz
-evidence-archive/
 verify-theorem-pipeline.sage

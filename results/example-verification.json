@@ -1,6 +1,6 @@
 {
   "artifact": "verify-examples.py",
-  "purpose": "Statement-by-statement verification of the two examples in Section Examples",
+  "purpose": "Statement-by-statement verification of three diagnostic cases (Examples 6.1-6.2 and Remark 6.3)",
   "examples": [
     {
       "name": "Fibonacci sequence modulo 7",
