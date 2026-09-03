@@ -1,6 +1,7 @@
 # Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences
 
-[![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22118430.svg)](https://doi.org/10.5281/zenodo.22118430)
+[![Manuscript DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22149586.svg)](https://doi.org/10.5281/zenodo.22149586)
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22118430.svg)](https://doi.org/10.5281/zenodo.22118430)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12.7-blue.svg)](https://www.python.org/downloads/release/python-3127/)
 [![GitHub Release Date](https://img.shields.io/github/release-date/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences)](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases)
@@ -9,8 +10,8 @@
 > 
 > **Majid Ghandali**  |  Independent Researcher  |  2026  
 > **Current reproducibility release:** [`v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
-> **Software DOI:** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
-> **Preprint DOI:** [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
+> **Manuscript DOI (cite this):** [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
+> **Software DOI (verification code):** [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430)
 
 ---
 
@@ -510,13 +511,14 @@ half-period-involutions-in-inert-lucas-sequences/
 
 ## Zenodo Archive
 
-The citable archival copy of the v1.0.0-preprint reproducibility release is hosted on Zenodo:
+Both the manuscript and the reproducibility software are archived on Zenodo, as separate records:
 
-| Release | DOI |
-|:--|:--|
-| **v1.0.0-preprint** |  [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) |
+| Item | DOI | Role |
+|:--|:--|:--|
+| Manuscript (preprint) | [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586) | **Primary -- cite this for the mathematical content** |
+| Reproducibility software (`v1.0.0-preprint`) | [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) | Secondary -- cite only when referencing the verification code itself |
 
-The Zenodo DOI identifies a fixed archived release. For reproducibility and citation, use the DOI corresponding to the exact release version used.
+Each Zenodo DOI identifies a fixed archived record. For reproducibility and citation, use the DOI corresponding to what you are actually referencing: the manuscript DOI for the mathematics, the software DOI for the code.
 
 The GitHub release page is available at:
 
@@ -526,19 +528,33 @@ The GitHub release page is available at:
 
 ## Citation
 
-If this repository contributes to your research, please cite:
+If this repository contributes to your research, please cite, in order of priority:
 
-1. the accompanying mathematical manuscript; and
-2. the archived reproducibility release.
+1. the accompanying mathematical manuscript (primary); and
+2. the archived reproducibility software, only when referring specifically to the verification code.
 
 Citation metadata is available in:
 
 -> [`CITATION.cff`](CITATION.cff)
 
-### Reproducibility archive
+### Manuscript (primary citation)
 
 ```bibtex
-@software{Ghandali2026HalfPeriodReproducibility,
+@misc{Ghandali2026HalfPeriod,
+  author    = {Ghandali, Majid},
+  title     = {Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22149586},
+  url       = {https://doi.org/10.5281/zenodo.22149586},
+  note      = {Preprint}
+}
+```
+
+### Reproducibility software (secondary -- cite only for the verification code)
+
+```bibtex
+@software{Ghandali2026HalfPeriodSoftware,
   author    = {Ghandali, Majid},
   title     = {Reproducibility Materials for {``Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences''}},
   year      = {2026},
@@ -547,17 +563,6 @@ Citation metadata is available in:
   doi       = {10.5281/zenodo.22118430},
   url       = {https://doi.org/10.5281/zenodo.22118430},
   note      = {Archived reproducibility release}
-}
-```
-
-### Accompanying mathematical manuscript
-
-```bibtex
-@misc{Ghandali2026HalfPeriodManuscript,
-  author = {Ghandali, Majid},
-  title  = {Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences},
-  year   = {2026},
-  note   = {Manuscript}
 }
 ```
 
