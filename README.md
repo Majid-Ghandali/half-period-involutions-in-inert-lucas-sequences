@@ -134,7 +134,6 @@ The manuscript studies two exact structural mechanisms:
 - [Repository Structure](#repository-structure)
 - [Citation](#citation)
 - [Zenodo Archive](#zenodo-archive)
-- [Release Discipline](#release-discipline)
 - [License](#license)
 - [Author](#author)
 
