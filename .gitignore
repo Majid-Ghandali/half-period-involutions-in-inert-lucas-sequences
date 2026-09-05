@@ -33,3 +33,9 @@ manuscript/*.bbl
 manuscript/*.blg
 manuscript/*.synctex.gz
 verify-theorem-pipeline.sage
+
+# Local backups, LaTeX build files, and Python cache
+*.bak
+*.bak-*
+.local-backups/
+*.pyc

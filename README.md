@@ -7,7 +7,7 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences)](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases)
 > **Reproducibility and archival materials for**  
 > *"Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences."*
-> 
+>
 > **Majid Ghandali**  |  Independent Researcher  |  2026  
 > **Current reproducibility release:** [`v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 > **Manuscript DOI (cite this):** [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586)
@@ -511,67 +511,72 @@ half-period-involutions-in-inert-lucas-sequences/
 
 ## Zenodo Archive
 
-Both the manuscript and the reproducibility software are archived on Zenodo, as separate records:
+The manuscript and the reproducibility materials are archived on Zenodo as
+separate records:
 
 | Item | DOI | Role |
 |:--|:--|:--|
-| Manuscript (preprint) | [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586) | **Primary -- cite this for the mathematical content** |
-| Reproducibility software (`v1.0.0-preprint`) | [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) | Secondary -- cite only when referencing the verification code itself |
+| Manuscript preprint | [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586) | **Primary citation for the mathematical content** |
+| Reproducibility materials (`v1.0.0-preprint`) | [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) | Secondary citation for the verification code and reproducibility files |
 
-Each Zenodo DOI identifies a fixed archived record. For reproducibility and citation, use the DOI corresponding to what you are actually referencing: the manuscript DOI for the mathematics, the software DOI for the code.
+Use the DOI corresponding to the object being cited. Cite the manuscript DOI
+when referring to the mathematical content of the paper. Cite the
+reproducibility-materials DOI only when referring specifically to the
+verification code or archived computational materials.
 
-The GitHub release page is available at:
+The GitHub release associated with the reproducibility materials is:
 
--> [GitHub Release: v1.0.0-preprint](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
+-> [GitHub Release: `v1.0.0-preprint`](https://github.com/Majid-Ghandali/half-period-involutions-in-inert-lucas-sequences/releases/tag/v1.0.0-preprint)
 
 ---
-
 ## Citation
 
-If this repository contributes to your research, please cite, in order of priority:
+If this repository contributes to your research, please cite the appropriate
+archived record:
 
-1. the accompanying mathematical manuscript (primary); and
-2. the archived reproducibility software, only when referring specifically to the verification code.
+1. cite the manuscript preprint for the mathematical content; and
+2. cite the reproducibility materials only when referring specifically to the
+   verification code or computational reproducibility files.
 
 Citation metadata is available in:
 
 -> [`CITATION.cff`](CITATION.cff)
 
-### Manuscript (primary citation)
+### Manuscript preprint: primary citation
 
 ```bibtex
 @misc{Ghandali2026HalfPeriod,
-  author    = {Ghandali, Majid},
-  title     = {Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences},
-  year      = {2026},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.22149586},
-  url       = {https://doi.org/10.5281/zenodo.22149586},
-  note      = {Preprint}
+  author       = {Ghandali, Majid},
+  title        = {Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences},
+  year         = {2026},
+  howpublished = {Zenodo. \url{https://doi.org/10.5281/zenodo.22149586}},
+  note         = {Preprint. DOI: 10.5281/zenodo.22149586},
+  doi          = {10.5281/zenodo.22149586},
+  url          = {https://doi.org/10.5281/zenodo.22149586}
 }
 ```
 
-### Reproducibility software (secondary -- cite only for the verification code)
+### Reproducibility materials: secondary citation for code/materials
 
 ```bibtex
-@software{Ghandali2026HalfPeriodSoftware,
-  author    = {Ghandali, Majid},
-  title     = {Reproducibility Materials for {``Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences''}},
-  year      = {2026},
-  version   = {v1.0.0-preprint},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.22118430},
-  url       = {https://doi.org/10.5281/zenodo.22118430},
-  note      = {Archived reproducibility release}
+@misc{Ghandali2026HalfPeriodSoftware,
+  author       = {Ghandali, Majid},
+  title        = {{Reproducibility Materials for Half-Period Involutions and Exact Cancellation in Inert Lucas Sequences}},
+  year         = {2026},
+  howpublished = {Zenodo. \url{https://doi.org/10.5281/zenodo.22118430}},
+  note         = {Archived verification code and reproducibility materials, version v1.0.0-preprint. DOI: 10.5281/zenodo.22118430},
+  doi          = {10.5281/zenodo.22118430},
+  url          = {https://doi.org/10.5281/zenodo.22118430}
 }
 ```
 
+The repository-level `CITATION.cff` file identifies the archived
+reproducibility materials as software and uses `preferred-citation` to point
+to the manuscript preprint as the primary citation for the mathematical
+content.
 ## License
 
 All contents of this repository are released under the [MIT License](LICENSE).
-
----
-
 ## Author
 
 **Majid Ghandali**  
@@ -579,4 +584,3 @@ Independent Researcher, Tehran, Iran
 
 Email: [majid.ghandali@gmail.com](mailto:majid.ghandali@gmail.com)  
 ORCID: [0009-0001-1097-1770](https://orcid.org/0009-0001-1097-1770)
-
