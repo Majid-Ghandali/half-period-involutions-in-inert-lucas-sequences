@@ -25,7 +25,8 @@
                                 {
                                     "identifier":  "10.5281/zenodo.22149586",
                                     "relation":  "isSupplementTo",
-                                    "resource_type":  "publication-preprint"
+                                    "resource_type":  "publication-preprint",
+                                    "scheme":  "doi"
                                 }
                             ]
 }
