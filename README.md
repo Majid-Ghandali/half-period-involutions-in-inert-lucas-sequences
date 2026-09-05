@@ -100,7 +100,8 @@ The manuscript studies two exact structural mechanisms:
 | Verification outputs | `results/` |
 | Release metadata | `CITATION.cff`; `.zenodo.json` |
 | License | MIT |
-| Archival DOI | [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) |
+| Manuscript DOI (cite this) | [10.5281/zenodo.22149586](https://doi.org/10.5281/zenodo.22149586) |
+| Software DOI (verification code) | [10.5281/zenodo.22118430](https://doi.org/10.5281/zenodo.22118430) |
 
 ---
 
@@ -112,11 +113,16 @@ The manuscript studies two exact structural mechanisms:
 | Cancellation mechanisms | [Two Exact Cancellation Mechanisms](#two-exact-cancellation-mechanisms) |
 | Diagnostic examples | [Diagnostic Examples](#diagnostic-examples) |
 | Mathematical scope | [Mathematical Scope](#mathematical-scope) |
+| Theoretical framework | [Theoretical Framework](#theoretical-framework) |
 | Verification pipeline | [Verification Pipeline](#verification-pipeline) |
+| Reproducibility principles | [Reproducibility Principles](#reproducibility-principles) |
+| Usage | [Usage](#usage) |
 | Build the preprint | [Build the Preprint](#build-the-preprint) |
 | Repository structure | [Repository Structure](#repository-structure) |
-| Citation | [Citation](#citation) |
 | Zenodo archive | [Zenodo Archive](#zenodo-archive) |
+| Citation | [Citation](#citation) |
+| License | [License](#license) |
+| Author | [Author](#author) |
 
 ---
 
@@ -132,8 +138,8 @@ The manuscript studies two exact structural mechanisms:
 - [Usage](#usage)
 - [Build the Preprint](#build-the-preprint)
 - [Repository Structure](#repository-structure)
-- [Citation](#citation)
 - [Zenodo Archive](#zenodo-archive)
+- [Citation](#citation)
 - [License](#license)
 - [Author](#author)
 
