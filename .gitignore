@@ -14,14 +14,19 @@ texput.log
 # Python
 __pycache__/
 *.py[cod]
+*.pyc
 
 # Local / non-public
 evidence-archive/
 _local_evidence/
 *.sage
+verify-theorem-pipeline.sage
 README.md.working-backup
+*.bak
+*.bak-*
+.local-backups/
 
-# Local manuscript tooling / editor (not part of public release)
+# Local manuscript tooling / editor
 manuscript/.vscode/
 manuscript/reference_check_output/
 manuscript/*.ps1
@@ -32,10 +37,17 @@ manuscript/*.toc
 manuscript/*.bbl
 manuscript/*.blg
 manuscript/*.synctex.gz
-verify-theorem-pipeline.sage
 
-# Local backups, LaTeX build files, and Python cache
-*.bak
-*.bak-*
-.local-backups/
-*.pyc
+# Local submission copies (do not publish)
+manuscript/Cover_letter.txt
+manuscript/Cover_letter.pdf
+manuscript/Cover letter.pdf
+manuscript/Cover letter.tex
+manuscript/Cover letter.txt
+manuscript/Cover letter.sty
+manuscript/main_p4.tex
+manuscript/main_p4.pdf
+manuscript/latex_source.zip
+manuscript/check_text.py
+unicodedata.py
+code/results/
